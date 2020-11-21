@@ -57,4 +57,18 @@
   <ItemGroup>
     <Folder Include="Properties" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="Perk.sql" />
+    <Build Include="Company.sql" />
+    <Build Include="Job.sql" />
+    <Build Include="Candidate.sql" />
+    <Build Include="Application.sql" />
+    <Build Include="Interview.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="SeedSampleData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecruitmentDB.publish.xml" />
+  </ItemGroup>
 </Project>

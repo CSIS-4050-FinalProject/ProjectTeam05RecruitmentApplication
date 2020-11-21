@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[Company]
+(
+	[CompanyId] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Name] NVARCHAR(50) NOT NULL,
+	[HiringDepartment] NVARCHAR(50) NOT NULL,
+	[HiringManager] NVARCHAR(50) NOT NULL,
+	[Size] NVARCHAR(50) NOT NULL
+
+)
