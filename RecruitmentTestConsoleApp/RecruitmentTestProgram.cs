@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RecruitmentTestConsoleApp
 {
-    class Program
+    class RecruitmentTestProgram
     {
         static void Main(string[] args)
         {
