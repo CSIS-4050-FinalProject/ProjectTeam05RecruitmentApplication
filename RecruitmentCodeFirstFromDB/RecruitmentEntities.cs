@@ -40,6 +40,11 @@ namespace RecruitmentCodeFirstFromDB
                 .HasMany(e => e.Applications)
                 .WithRequired(e => e.Job)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Job>()
+                .HasMany(e => e.Perks)
+                .WithMany(e => e.Jobs)
+                .Map(m => m.ToTable("JobPerk").MapLeftKey("JobId").MapRightKey("PerkId"));
         }
     }
 }

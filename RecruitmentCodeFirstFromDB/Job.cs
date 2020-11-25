@@ -13,11 +13,10 @@ namespace RecruitmentCodeFirstFromDB
         public Job()
         {
             Applications = new HashSet<Application>();
+            Perks = new HashSet<Perk>();
         }
 
         public int JobId { get; set; }
-
-        public int? PerkId { get; set; }
 
         public int CompanyId { get; set; }
 
@@ -34,6 +33,7 @@ namespace RecruitmentCodeFirstFromDB
 
         public virtual Company Company { get; set; }
 
-        public virtual Perk Perk { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Perk> Perks { get; set; }
     }
 }
