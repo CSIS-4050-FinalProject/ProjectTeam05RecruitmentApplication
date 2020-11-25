@@ -14,7 +14,7 @@ namespace RecruitmentTestConsoleApp
         {
             using (RecruitmentEntities context = new RecruitmentEntities())
             {
-                //context.SeedDatabase();
+                context.SeedDatabase();
 
                 DisplayTable(context.Jobs);
                 DisplayTable(context.Perks);

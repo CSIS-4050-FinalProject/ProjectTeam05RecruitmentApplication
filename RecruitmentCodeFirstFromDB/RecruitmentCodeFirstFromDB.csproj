@@ -61,6 +61,7 @@
     <Compile Include="Perk.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecruitmentEntities.cs" />
+    <Compile Include="SeedDatabaseExtensionMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
