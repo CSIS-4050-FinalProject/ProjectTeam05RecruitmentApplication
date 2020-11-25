@@ -99,16 +99,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ControllerUtilities\ControllerUtilities.csproj">
-      <Project>{8f8d5bfe-4c45-474a-b845-8a27c237024d}</Project>
-      <Name>ControllerUtilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecruitmentCodeFirstFromDB\RecruitmentCodeFirstFromDB.csproj">
-      <Project>{B1720F55-3B46-44C6-824A-31BF5B2C60BA}</Project>
-      <Name>RecruitmentCodeFirstFromDB</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
