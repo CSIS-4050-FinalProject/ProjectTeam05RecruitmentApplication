@@ -226,3 +226,42 @@ insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId
 insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (54, 'Abbye Roback', 3, 30, 'Face-to-face', 2);
 insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (55, 'Betsey Hallybone', 2, 21, 'Teams', 2);
 SET IDENTITY_INSERT [dbo].[Interview] OFF
+
+
+-- Jobs x Perks M:N relationship
+
+insert into JobPerk (JobId, PerkId) values 
+(1,8),
+(1,6),
+(2,10),
+(3,5),
+(4,9),
+(4,6),
+(5,9),
+(6,1),
+(7,5),
+(8,8),
+(8,1),
+(9,4),
+(10,10),
+(10,2),
+(11,4),
+(12,10),
+(13,4),
+(13,5),
+(14,6),
+(14,4),
+(15,2),
+(15,7),
+(16,10),
+(16,2),
+(16,4),
+(16,7),
+(17,5),
+(18,10),
+(18,3),
+(18,9),
+(19,3),
+(19,7),
+(20,2),
+(20,6);

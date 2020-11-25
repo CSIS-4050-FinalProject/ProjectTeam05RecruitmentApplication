@@ -64,6 +64,7 @@
     <Build Include="Candidate.sql" />
     <Build Include="Application.sql" />
     <Build Include="Interview.sql" />
+    <Build Include="JobPerk.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="SeedSampleData.sql" />
