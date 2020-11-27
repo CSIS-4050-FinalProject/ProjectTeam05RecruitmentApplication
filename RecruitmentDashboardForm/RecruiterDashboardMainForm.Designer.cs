@@ -46,10 +46,10 @@
             this.labelRoleDescription = new System.Windows.Forms.Label();
             this.labelSelectedRoleOutput = new System.Windows.Forms.Label();
             this.labelSelectedPosition = new System.Windows.Forms.Label();
-            this.labelDateRoleFinalizesOutput = new System.Windows.Forms.Label();
-            this.labelDateRoleFinalizes = new System.Windows.Forms.Label();
-            this.labelDateRoleOpenedOutput = new System.Windows.Forms.Label();
-            this.labelDateRoleOpened = new System.Windows.Forms.Label();
+            this.labelStatusDateOutput = new System.Windows.Forms.Label();
+            this.labelStatusDate = new System.Windows.Forms.Label();
+            this.labelDateRoleSubmittedOutput = new System.Windows.Forms.Label();
+            this.labelDateSubmitted = new System.Windows.Forms.Label();
             this.dataGridViewPerksOutput = new System.Windows.Forms.DataGridView();
             this.labelPerks = new System.Windows.Forms.Label();
             this.labelSalaryOutput = new System.Windows.Forms.Label();
@@ -237,43 +237,43 @@
             this.labelSelectedPosition.TabIndex = 63;
             this.labelSelectedPosition.Text = "Selected Role";
             // 
-            // labelDateRoleFinalizesOutput
+            // labelStatusDateOutput
             // 
-            this.labelDateRoleFinalizesOutput.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelDateRoleFinalizesOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelDateRoleFinalizesOutput.Location = new System.Drawing.Point(450, 321);
-            this.labelDateRoleFinalizesOutput.Name = "labelDateRoleFinalizesOutput";
-            this.labelDateRoleFinalizesOutput.Size = new System.Drawing.Size(111, 23);
-            this.labelDateRoleFinalizesOutput.TabIndex = 62;
-            this.labelDateRoleFinalizesOutput.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelStatusDateOutput.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelStatusDateOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelStatusDateOutput.Location = new System.Drawing.Point(450, 321);
+            this.labelStatusDateOutput.Name = "labelStatusDateOutput";
+            this.labelStatusDateOutput.Size = new System.Drawing.Size(111, 23);
+            this.labelStatusDateOutput.TabIndex = 62;
+            this.labelStatusDateOutput.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // labelDateRoleFinalizes
+            // labelStatusDate
             // 
-            this.labelDateRoleFinalizes.AutoSize = true;
-            this.labelDateRoleFinalizes.Location = new System.Drawing.Point(358, 326);
-            this.labelDateRoleFinalizes.Name = "labelDateRoleFinalizes";
-            this.labelDateRoleFinalizes.Size = new System.Drawing.Size(73, 13);
-            this.labelDateRoleFinalizes.TabIndex = 61;
-            this.labelDateRoleFinalizes.Text = "Role Finalized";
+            this.labelStatusDate.AutoSize = true;
+            this.labelStatusDate.Location = new System.Drawing.Point(358, 326);
+            this.labelStatusDate.Name = "labelStatusDate";
+            this.labelStatusDate.Size = new System.Drawing.Size(63, 13);
+            this.labelStatusDate.TabIndex = 61;
+            this.labelStatusDate.Text = "Status Date";
             // 
-            // labelDateRoleOpenedOutput
+            // labelDateRoleSubmittedOutput
             // 
-            this.labelDateRoleOpenedOutput.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelDateRoleOpenedOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelDateRoleOpenedOutput.Location = new System.Drawing.Point(450, 285);
-            this.labelDateRoleOpenedOutput.Name = "labelDateRoleOpenedOutput";
-            this.labelDateRoleOpenedOutput.Size = new System.Drawing.Size(111, 23);
-            this.labelDateRoleOpenedOutput.TabIndex = 60;
-            this.labelDateRoleOpenedOutput.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelDateRoleSubmittedOutput.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelDateRoleSubmittedOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelDateRoleSubmittedOutput.Location = new System.Drawing.Point(450, 285);
+            this.labelDateRoleSubmittedOutput.Name = "labelDateRoleSubmittedOutput";
+            this.labelDateRoleSubmittedOutput.Size = new System.Drawing.Size(111, 23);
+            this.labelDateRoleSubmittedOutput.TabIndex = 60;
+            this.labelDateRoleSubmittedOutput.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // labelDateRoleOpened
+            // labelDateSubmitted
             // 
-            this.labelDateRoleOpened.AutoSize = true;
-            this.labelDateRoleOpened.Location = new System.Drawing.Point(358, 290);
-            this.labelDateRoleOpened.Name = "labelDateRoleOpened";
-            this.labelDateRoleOpened.Size = new System.Drawing.Size(70, 13);
-            this.labelDateRoleOpened.TabIndex = 59;
-            this.labelDateRoleOpened.Text = "Role Opened";
+            this.labelDateSubmitted.AutoSize = true;
+            this.labelDateSubmitted.Location = new System.Drawing.Point(358, 290);
+            this.labelDateSubmitted.Name = "labelDateSubmitted";
+            this.labelDateSubmitted.Size = new System.Drawing.Size(80, 13);
+            this.labelDateSubmitted.TabIndex = 59;
+            this.labelDateSubmitted.Text = "Date Submitted";
             // 
             // dataGridViewPerksOutput
             // 
@@ -398,10 +398,10 @@
             this.Controls.Add(this.labelRoleDescription);
             this.Controls.Add(this.labelSelectedRoleOutput);
             this.Controls.Add(this.labelSelectedPosition);
-            this.Controls.Add(this.labelDateRoleFinalizesOutput);
-            this.Controls.Add(this.labelDateRoleFinalizes);
-            this.Controls.Add(this.labelDateRoleOpenedOutput);
-            this.Controls.Add(this.labelDateRoleOpened);
+            this.Controls.Add(this.labelStatusDateOutput);
+            this.Controls.Add(this.labelStatusDate);
+            this.Controls.Add(this.labelDateRoleSubmittedOutput);
+            this.Controls.Add(this.labelDateSubmitted);
             this.Controls.Add(this.dataGridViewPerksOutput);
             this.Controls.Add(this.labelPerks);
             this.Controls.Add(this.labelSalaryOutput);
@@ -454,10 +454,10 @@
         private System.Windows.Forms.Label labelRoleDescription;
         private System.Windows.Forms.Label labelSelectedRoleOutput;
         private System.Windows.Forms.Label labelSelectedPosition;
-        private System.Windows.Forms.Label labelDateRoleFinalizesOutput;
-        private System.Windows.Forms.Label labelDateRoleFinalizes;
-        private System.Windows.Forms.Label labelDateRoleOpenedOutput;
-        private System.Windows.Forms.Label labelDateRoleOpened;
+        private System.Windows.Forms.Label labelStatusDateOutput;
+        private System.Windows.Forms.Label labelStatusDate;
+        private System.Windows.Forms.Label labelDateRoleSubmittedOutput;
+        private System.Windows.Forms.Label labelDateSubmitted;
         private System.Windows.Forms.DataGridView dataGridViewPerksOutput;
         private System.Windows.Forms.Label labelPerks;
         private System.Windows.Forms.Label labelSalaryOutput;

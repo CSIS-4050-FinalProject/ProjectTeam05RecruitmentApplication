@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompanyValidation.cs" />
     <Compile Include="GridViewAuthentication.cs" />
+    <Compile Include="PerkValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -69,6 +71,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ControllerUtilities\ControllerUtilities.csproj">
+      <Project>{8f8d5bfe-4c45-474a-b845-8a27c237024d}</Project>
+      <Name>ControllerUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecruitmentCodeFirstFromDB\RecruitmentCodeFirstFromDB.csproj">
+      <Project>{b1720f55-3b46-44c6-824a-31bf5b2c60ba}</Project>
+      <Name>RecruitmentCodeFirstFromDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecruitmentDB\RecruitmentDB.sqlproj">
+      <Project>{26484b03-a1b9-4394-a039-193835332660}</Project>
+      <Name>RecruitmentDB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

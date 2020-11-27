@@ -35,7 +35,6 @@
             this.labelRecruiterNameOutput = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.labelRoleStatus = new System.Windows.Forms.Label();
-            this.checkBoxFinalized = new System.Windows.Forms.CheckBox();
             this.dataGridViewCandidatesDetails = new System.Windows.Forms.DataGridView();
             this.labelRoundOutput = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,6 +47,9 @@
             this.textBoxLocation = new System.Windows.Forms.TextBox();
             this.labelMedium = new System.Windows.Forms.Label();
             this.textBoxMedium = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxStatusOutput = new System.Windows.Forms.TextBox();
+            this.textBoxUpdateDateOutput = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCandidatesDetails)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,21 +109,11 @@
             // labelRoleStatus
             // 
             this.labelRoleStatus.AutoSize = true;
-            this.labelRoleStatus.Location = new System.Drawing.Point(998, 293);
+            this.labelRoleStatus.Location = new System.Drawing.Point(997, 293);
             this.labelRoleStatus.Name = "labelRoleStatus";
-            this.labelRoleStatus.Size = new System.Drawing.Size(65, 13);
+            this.labelRoleStatus.Size = new System.Drawing.Size(68, 13);
             this.labelRoleStatus.TabIndex = 10;
-            this.labelRoleStatus.Text = "Role Status:";
-            // 
-            // checkBoxFinalized
-            // 
-            this.checkBoxFinalized.AutoSize = true;
-            this.checkBoxFinalized.Location = new System.Drawing.Point(1072, 292);
-            this.checkBoxFinalized.Name = "checkBoxFinalized";
-            this.checkBoxFinalized.Size = new System.Drawing.Size(67, 17);
-            this.checkBoxFinalized.TabIndex = 11;
-            this.checkBoxFinalized.Text = "Finalized";
-            this.checkBoxFinalized.UseVisualStyleBackColor = true;
+            this.labelRoleStatus.Text = "Update Date";
             // 
             // dataGridViewCandidatesDetails
             // 
@@ -227,11 +219,37 @@
             this.textBoxMedium.Size = new System.Drawing.Size(141, 20);
             this.textBoxMedium.TabIndex = 23;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1001, 325);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Status";
+            // 
+            // textBoxStatusOutput
+            // 
+            this.textBoxStatusOutput.Location = new System.Drawing.Point(1069, 325);
+            this.textBoxStatusOutput.Name = "textBoxStatusOutput";
+            this.textBoxStatusOutput.Size = new System.Drawing.Size(123, 20);
+            this.textBoxStatusOutput.TabIndex = 25;
+            // 
+            // textBoxUpdateDateOutput
+            // 
+            this.textBoxUpdateDateOutput.Location = new System.Drawing.Point(1069, 290);
+            this.textBoxUpdateDateOutput.Name = "textBoxUpdateDateOutput";
+            this.textBoxUpdateDateOutput.Size = new System.Drawing.Size(123, 20);
+            this.textBoxUpdateDateOutput.TabIndex = 26;
+            // 
             // UpdateApplicationProgressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1220, 710);
+            this.Controls.Add(this.textBoxUpdateDateOutput);
+            this.Controls.Add(this.textBoxStatusOutput);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxMedium);
             this.Controls.Add(this.labelMedium);
             this.Controls.Add(this.textBoxLocation);
@@ -244,7 +262,6 @@
             this.Controls.Add(this.labelRoundOutput);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewCandidatesDetails);
-            this.Controls.Add(this.checkBoxFinalized);
             this.Controls.Add(this.labelRoleStatus);
             this.Controls.Add(this.labelRecruiterNameOutput);
             this.Controls.Add(this.label3);
@@ -269,7 +286,6 @@
         private System.Windows.Forms.Label labelRecruiterNameOutput;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelRoleStatus;
-        private System.Windows.Forms.CheckBox checkBoxFinalized;
         private System.Windows.Forms.DataGridView dataGridViewCandidatesDetails;
         private System.Windows.Forms.Label labelRoundOutput;
         private System.Windows.Forms.Label label2;
@@ -282,5 +298,8 @@
         private System.Windows.Forms.TextBox textBoxLocation;
         private System.Windows.Forms.Label labelMedium;
         private System.Windows.Forms.TextBox textBoxMedium;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxStatusOutput;
+        private System.Windows.Forms.TextBox textBoxUpdateDateOutput;
     }
 }

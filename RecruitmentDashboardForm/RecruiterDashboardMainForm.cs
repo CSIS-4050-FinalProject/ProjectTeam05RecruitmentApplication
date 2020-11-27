@@ -62,8 +62,8 @@ namespace RecruitmentDashboardForm
             labelNumberOfRoundsOutput.ResetText();
             labelCurrentRoundOutput.ResetText();
             labelNumberOfCandidatesOutput.ResetText();
-            labelDateRoleOpenedOutput.ResetText();
-            labelDateRoleFinalizesOutput.ResetText();
+            labelDateRoleSubmittedOutput.ResetText();
+            labelStatusDateOutput.ResetText();
             labelSalaryOutput.ResetText();
             labelRoleDescriptionOutput.ResetText();
         }
@@ -199,8 +199,8 @@ namespace RecruitmentDashboardForm
             labelNumberOfRoundsOutput.ResetText();
             labelCurrentRoundOutput.ResetText();
             labelNumberOfCandidatesOutput.ResetText();
-            labelDateRoleOpenedOutput.ResetText();
-            labelDateRoleFinalizesOutput.ResetText();
+            labelDateRoleSubmittedOutput.ResetText();
+            labelStatusDateOutput.ResetText();
             labelSalaryOutput.ResetText();
             labelRoleDescriptionOutput.ResetText();
             //}
