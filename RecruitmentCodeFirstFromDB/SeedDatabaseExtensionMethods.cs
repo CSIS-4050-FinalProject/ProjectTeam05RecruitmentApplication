@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace RecruitmentCodeFirstFromDB
 {
 	public static class SeedDatabaseExtensionMethods
-    {
+	{
 		/// <summary>
 		/// extension method of RecruitmentEntities to 
 		/// zero out the db tables, then seed all tables with initial data
@@ -18,10 +18,10 @@ namespace RecruitmentCodeFirstFromDB
 		{
 			// set up database log to write to output window in VS
 			context.Database.Log = (s => Debug.Write(s));
-			
+
 			//Remove everything
 			context.Database.Delete();
-			
+
 			// Create() creates a table for each entity. It even does this
 			context.Database.Create();
 
@@ -31,6 +31,12 @@ namespace RecruitmentCodeFirstFromDB
 			//Run script
 			context.Database.ExecuteSqlCommand(seedScript);
 
+		}
+
+		public static void SaveDatabaseToXML(this RecruitmentEntities context)
+		{
+		
+			//TODO
 		}
 	}
 }
