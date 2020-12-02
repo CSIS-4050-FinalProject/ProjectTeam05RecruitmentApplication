@@ -26,7 +26,7 @@ namespace RecruitmentCodeFirstFromDB
 			context.Database.Create();
 
 			// Read script file from SQLScripts folder inside solution folder
-			string seedScript = File.ReadAllText(@"./../../../SQLScripts/SeedData.sql");
+			string seedScript = File.ReadAllText(@"./../../../RecruitmentDB/SeedSampleData.sql");
 
 			//Run script
 			context.Database.ExecuteSqlCommand(seedScript);
