@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruitmentCodeFirstFromDB"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruitmentTestConsoleApp", "RecruitmentTestConsoleApp\RecruitmentTestConsoleApp.csproj", "{46C9265E-6712-4D2B-8DAB-A673A085CB55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruitmentAuthentication", "RecruitmentAuthentication\RecruitmentAuthentication.csproj", "{D8205ED7-22DE-4DB3-B5B3-F63CF690A242}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruitmentAppValidation", "RecruitmentAuthentication\RecruitmentAppValidation.csproj", "{D8205ED7-22DE-4DB3-B5B3-F63CF690A242}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

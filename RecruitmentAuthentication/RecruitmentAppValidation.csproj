@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompanyValidation.cs" />
-    <Compile Include="GridViewAuthentication.cs" />
+    <Compile Include="GridViewValidation.cs" />
     <Compile Include="PerkValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
