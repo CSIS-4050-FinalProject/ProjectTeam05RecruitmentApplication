@@ -109,6 +109,10 @@
       <Project>{b1720f55-3b46-44c6-824a-31bf5b2c60ba}</Project>
       <Name>RecruitmentCodeFirstFromDB</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RecruitmentDB\RecruitmentDB.sqlproj">
+      <Project>{26484b03-a1b9-4394-a039-193835332660}</Project>
+      <Name>RecruitmentDB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
