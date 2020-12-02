@@ -4,16 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8F8D5BFE-4C45-474A-B845-8A27C237024D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>ControllerUtilities</RootNamespace>
-    <AssemblyName>ControllerUtilities</AssemblyName>
+    <ProjectGuid>{D8205ED7-22DE-4DB3-B5B3-F63CF690A242}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RecruitmentAuthentication</RootNamespace>
+    <AssemblyName>RecruitmentAuthentication</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,26 +34,57 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller.cs" />
+    <Compile Include="CompanyValidation.cs" />
+    <Compile Include="GridViewValidation.cs" />
+    <Compile Include="PerkValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="EntityFramework">
-      <Version>6.4.4</Version>
-    </PackageReference>
+    <ProjectReference Include="..\ControllerUtilities\ControllerUtilities.csproj">
+      <Project>{8f8d5bfe-4c45-474a-b845-8a27c237024d}</Project>
+      <Name>ControllerUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecruitmentCodeFirstFromDB\RecruitmentCodeFirstFromDB.csproj">
+      <Project>{b1720f55-3b46-44c6-824a-31bf5b2c60ba}</Project>
+      <Name>RecruitmentCodeFirstFromDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecruitmentDB\RecruitmentDB.sqlproj">
+      <Project>{26484b03-a1b9-4394-a039-193835332660}</Project>
+      <Name>RecruitmentDB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

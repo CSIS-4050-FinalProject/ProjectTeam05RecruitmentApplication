@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RecruitmentCodeFirstFromDB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,7 +35,7 @@ namespace RecruitmentDashboardForm
 
             // Update recruitment process for selected role
             UpdateApplicationProgressForm updateApplicationProgressForm;
-            //buttonUpdateRole.Click += (s, e) => AddOrUpdateForm<Class>(updateApplicationProgressForm = new UpdateApplicationProgressForm(role));
+            buttonUpdateRole.Click += (s, e) => AddOrUpdateForm<Job>(updateApplicationProgressForm = new UpdateApplicationProgressForm(role));
 
             // Backup button event handler
             //buttonBackupDB.Click += (s,e) => BackupDataSetToXML(DataSet);
