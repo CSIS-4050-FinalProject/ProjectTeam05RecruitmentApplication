@@ -165,66 +165,51 @@ insert into Application (ApplicationId, JobId, CandidateId, SubmissionDate, Empl
 
 SET IDENTITY_INSERT [dbo].[Application] OFF
 
--- 55 Interviews
+-- 40 Interviews
 
 SET IDENTITY_INSERT [dbo].[Interview] ON
 
-
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (1, 'Laura Kerbler', 1, 3, 'Face-to-face', 3);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (2, 'Javier Sired', 1, 8, 'Teams', 10);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (3, 'Hubey Creegan', 2, 4, 'Teams', 7);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (4, 'Margie McDougald', 1, 7, 'Teams', 10);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (5, 'Raynard Perche', 2, 23, 'WebEx', 8);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (6, 'Killie Stone', 1, 5, 'WebEx', 3);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (7, 'Mallissa Tother', 3, 3, 'Phone', 4);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (8, 'Sarge Fisbey', 1, 2, 'Teams', 5);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (1,'Laura Kerbler', 1, 3, 'Face-to-face', 3);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (2,'Javier Sired', 1, 8, 'Teams', 10);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (3,'Hubey Creegan', 2, 4, 'Teams', 7);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (4,'Margie McDougald', 1, 7, 'Teams', 10);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (5,'Raynard Perche', 2, 23, 'WebEx', 8);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (6,'Killie Stone', 1, 5, 'WebEx', 3);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (7,'Mallissa Tother', 3, 3, 'Phone', 4);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (8,'Sarge Fisbey', 1, 2, 'Teams', 5);
 insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (9, 'Nolly Grundey', 3, 26, 'Zoom', 4);
 insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (10, 'Egbert Sergean', 3, 19, 'WebEx', 9);
 insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (11, 'Kale Tytler', 1, 25, 'Face-to-face', 8);
 insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (12, 'Tessa Beevor', 1, 4, 'Face-to-face', 5);
 insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (13, 'Ford Toy', 3, 11, 'Teams', 10);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (14, 'Nathalia Stempe', 3, 1, 'Face-to-face', 8);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (15, 'Mercie Stygall', 1, 23, 'WebEx', 7);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (16, 'Tomi Ashbridge', 3, 3, 'Zoom', 9);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (17, 'Dwayne Luscott', 2, 27, 'Face-to-face', 9);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (18, 'Bud De Michele', 2, 24, 'Phone', 8);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (19, 'Andie Foli', 2, 21, 'Phone', 7);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (20, 'Ursala Walthew', 3, 25, 'Skype', 9);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (21, 'Kiley Mertsching', 3, 23, 'Teams', 2);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (22, 'Norris Copeland', 3, 23, 'Teams', 10);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (23, 'Kale Jeskins', 3, 12, 'WebEx', 1);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (24, 'Cassie Aldrin', 3, 1, 'WebEx', 6);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (25, 'Cart Ragot', 1, 17, 'Phone', 7);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (26, 'Harv Duckwith', 2, 23, 'Zoom', 7);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (27, 'Sigismond Gaywood', 3, 14, 'WebEx', 6);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (28, 'Adam Button', 3, 24, 'Skype', 3);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (29, 'Corina Timmons', 1, 9, 'Teams', 1);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (30, 'Orville Fidoe', 2, 5, 'Teams', 9);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (31, 'Billy Hoggins', 2, 28, 'Teams', 7);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (32, 'Bryon Searson', 2, 3, 'Zoom', 4);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (33, 'Analise Berlin', 3, 16, 'Face-to-face', 1);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (34, 'Alvera Disman', 2, 1, 'Skype', 5);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (35, 'Amalie Betterton', 1, 1, 'Teams', 5);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (36, 'Emmalee Ovenell', 3, 14, 'Face-to-face', 2);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (37, 'Mathilda Dwerryhouse', 1, 6, 'Skype', 3);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (38, 'Hillier Dursley', 3, 26, 'Skype', 7);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (39, 'Dwain Drabble', 2, 30, 'Skype', 1);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (40, 'Huberto Ashe', 1, 4, 'Teams', 10);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (41, 'Christel Jorgesen', 3, 3, 'Zoom', 4);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (42, 'Benny Ebbetts', 1, 15, 'Face-to-face', 5);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (43, 'Susann Lipscomb', 1, 14, 'Zoom', 2);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (44, 'Redd Trembath', 2, 21, 'Phone', 1);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (45, 'Noelyn Ramirez', 3, 2, 'Face-to-face', 6);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (46, 'Godfrey Mundow', 1, 8, 'WebEx', 7);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (47, 'Alanson Millhill', 1, 3, 'Face-to-face', 8);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (48, 'Timmi Tointon', 1, 11, 'Face-to-face', 7);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (49, 'Buddie Iannetti', 1, 3, 'Face-to-face', 4);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (50, 'Elana Plaice', 1, 2, 'Face-to-face', 1);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (51, 'Amandy Eby', 2, 13, 'Phone', 7);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (52, 'Jakie Gardiner', 2, 13, 'Face-to-face', 4);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (53, 'Noah Aliman', 3, 28, 'Zoom', 7);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (54, 'Abbye Roback', 3, 30, 'Face-to-face', 2);
-insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (55, 'Betsey Hallybone', 2, 21, 'Teams', 2);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (14, 'Mercie Stygall', 1, 23, 'WebEx', 7);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (15, 'Dwayne Luscott', 2, 27, 'Face-to-face', 9);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (16, 'Bud De Michele', 2, 24, 'Phone', 8);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (17, 'Andie Foli', 2, 21, 'Phone', 7);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (18, 'Ursala Walthew', 3, 25, 'Skype', 9);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (19, 'Kiley Mertsching', 3, 23, 'Teams', 2);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (20, 'Kale Jeskins', 3, 12, 'WebEx', 1);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (21, 'Cassie Aldrin', 3, 1, 'WebEx', 6);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (22, 'Cart Ragot', 1, 17, 'Phone', 7);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (23, 'Adam Button', 3, 24, 'Skype', 3);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (24, 'Corina Timmons', 1, 9, 'Teams', 1);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (25, 'Orville Fidoe', 2, 5, 'Teams', 9);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (26, 'Billy Hoggins', 2, 28, 'Teams', 7);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (27, 'Bryon Searson', 2, 3, 'Zoom', 4);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (28, 'Analise Berlin', 3, 16, 'Face-to-face', 1);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (29, 'Alvera Disman', 2, 1, 'Skype', 5);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (30, 'Amalie Betterton', 1, 1, 'Teams', 5);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (31, 'Emmalee Ovenell', 3, 14, 'Face-to-face', 2);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (32, 'Mathilda Dwerryhouse', 1, 6, 'Skype', 3);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (33, 'Dwain Drabble', 2, 30, 'Skype', 1);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (34, 'Benny Ebbetts', 1, 15, 'Face-to-face', 5);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (35, 'Susann Lipscomb', 1, 14, 'Zoom', 2);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (36, 'Noelyn Ramirez', 3, 2, 'Face-to-face', 6);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (37, 'Timmi Tointon', 1, 11, 'Face-to-face', 7);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (38, 'Amandy Eby', 2, 13, 'Phone', 7);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (39, 'Noah Aliman', 3, 28, 'Zoom', 7);
+insert into Interview (InterviewId, RecruiterName, InterviewRound, ApplicationId, Medium, Score) values (40, 'Abbye Roback', 3, 30, 'Face-to-face', 2);
+
 SET IDENTITY_INSERT [dbo].[Interview] OFF
 
 
