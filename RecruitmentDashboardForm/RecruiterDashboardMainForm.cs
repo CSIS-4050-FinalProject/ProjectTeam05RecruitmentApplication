@@ -17,7 +17,7 @@ namespace RecruitmentDashboardForm
     public partial class RecruiterDashboardMainForm : Form
     {
         string role;
-
+        int applicationID;
         public RecruiterDashboardMainForm()
         {
             InitializeComponent();
@@ -38,7 +38,7 @@ namespace RecruitmentDashboardForm
 
             // Update recruitment process for selected role
             UpdateApplicationProgressForm updateApplicationProgressForm;
-            buttonUpdateApplication.Click += (s, e) => AddOrUpdateForm<Job>(updateApplicationProgressForm = new UpdateApplicationProgressForm(role));
+            buttonUpdateApplication.Click += (s, e) => AddOrUpdateForm<Job>(updateApplicationProgressForm = new UpdateApplicationProgressForm(role, applicationID));
 
             // Backup button event handler
             //buttonBackupDB.Click += (s,e) => BackupDataSetToXML(DataSet);
@@ -215,6 +215,9 @@ namespace RecruitmentDashboardForm
                 //Initialize datagridviews
 
                 //TODO: Filter so that the only applications information that shows is the one that matches the jobID for the role selected
+
+                //TODO: Get application number when selected application in the datagrid and instantiate the application
+                applicationID = 2;
 
                 //TODO: Filter so that the only perks that show are the ones that matches the the role selected
             }
