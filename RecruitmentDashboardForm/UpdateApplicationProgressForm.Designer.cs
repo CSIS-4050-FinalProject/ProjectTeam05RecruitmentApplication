@@ -176,7 +176,7 @@
             // dataGridViewInterviewDetails
             // 
             this.dataGridViewInterviewDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewInterviewDetails.Location = new System.Drawing.Point(1, 366);
+            this.dataGridViewInterviewDetails.Location = new System.Drawing.Point(12, 366);
             this.dataGridViewInterviewDetails.Name = "dataGridViewInterviewDetails";
             this.dataGridViewInterviewDetails.Size = new System.Drawing.Size(561, 173);
             this.dataGridViewInterviewDetails.TabIndex = 27;
@@ -184,7 +184,7 @@
             // labelInterviewDetails
             // 
             this.labelInterviewDetails.AutoSize = true;
-            this.labelInterviewDetails.Location = new System.Drawing.Point(1, 347);
+            this.labelInterviewDetails.Location = new System.Drawing.Point(12, 347);
             this.labelInterviewDetails.Name = "labelInterviewDetails";
             this.labelInterviewDetails.Size = new System.Drawing.Size(85, 13);
             this.labelInterviewDetails.TabIndex = 28;
