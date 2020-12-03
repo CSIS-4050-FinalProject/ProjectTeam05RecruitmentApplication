@@ -67,7 +67,7 @@
             // labelRole
             // 
             this.labelRole.AutoSize = true;
-            this.labelRole.Location = new System.Drawing.Point(33, 22);
+            this.labelRole.Location = new System.Drawing.Point(16, 16);
             this.labelRole.Name = "labelRole";
             this.labelRole.Size = new System.Drawing.Size(32, 13);
             this.labelRole.TabIndex = 2;
@@ -76,7 +76,7 @@
             // labelRecruiterName
             // 
             this.labelRecruiterName.AutoSize = true;
-            this.labelRecruiterName.Location = new System.Drawing.Point(607, 365);
+            this.labelRecruiterName.Location = new System.Drawing.Point(599, 369);
             this.labelRecruiterName.Name = "labelRecruiterName";
             this.labelRecruiterName.Size = new System.Drawing.Size(81, 13);
             this.labelRecruiterName.TabIndex = 8;
@@ -85,7 +85,7 @@
             // labelUpdateDate
             // 
             this.labelUpdateDate.AutoSize = true;
-            this.labelUpdateDate.Location = new System.Drawing.Point(491, 239);
+            this.labelUpdateDate.Location = new System.Drawing.Point(55, 274);
             this.labelUpdateDate.Name = "labelUpdateDate";
             this.labelUpdateDate.Size = new System.Drawing.Size(68, 13);
             this.labelUpdateDate.TabIndex = 10;
@@ -94,7 +94,7 @@
             // dataGridViewCandidateDetails
             // 
             this.dataGridViewCandidateDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCandidateDetails.Location = new System.Drawing.Point(12, 129);
+            this.dataGridViewCandidateDetails.Location = new System.Drawing.Point(12, 89);
             this.dataGridViewCandidateDetails.Name = "dataGridViewCandidateDetails";
             this.dataGridViewCandidateDetails.Size = new System.Drawing.Size(845, 60);
             this.dataGridViewCandidateDetails.TabIndex = 12;
@@ -102,7 +102,7 @@
             // labelCandidateDetails
             // 
             this.labelCandidateDetails.AutoSize = true;
-            this.labelCandidateDetails.Location = new System.Drawing.Point(9, 112);
+            this.labelCandidateDetails.Location = new System.Drawing.Point(9, 72);
             this.labelCandidateDetails.Name = "labelCandidateDetails";
             this.labelCandidateDetails.Size = new System.Drawing.Size(90, 13);
             this.labelCandidateDetails.TabIndex = 17;
@@ -110,7 +110,7 @@
             // 
             // buttonUpdateApplication
             // 
-            this.buttonUpdateApplication.Location = new System.Drawing.Point(703, 230);
+            this.buttonUpdateApplication.Location = new System.Drawing.Point(267, 265);
             this.buttonUpdateApplication.Name = "buttonUpdateApplication";
             this.buttonUpdateApplication.Size = new System.Drawing.Size(154, 65);
             this.buttonUpdateApplication.TabIndex = 18;
@@ -120,7 +120,7 @@
             // labelScore
             // 
             this.labelScore.AutoSize = true;
-            this.labelScore.Location = new System.Drawing.Point(651, 443);
+            this.labelScore.Location = new System.Drawing.Point(643, 447);
             this.labelScore.Name = "labelScore";
             this.labelScore.Size = new System.Drawing.Size(35, 13);
             this.labelScore.TabIndex = 20;
@@ -129,7 +129,7 @@
             // 
             // textBoxScore
             // 
-            this.textBoxScore.Location = new System.Drawing.Point(697, 440);
+            this.textBoxScore.Location = new System.Drawing.Point(689, 444);
             this.textBoxScore.Name = "textBoxScore";
             this.textBoxScore.Size = new System.Drawing.Size(141, 20);
             this.textBoxScore.TabIndex = 21;
@@ -137,7 +137,7 @@
             // labelMedium
             // 
             this.labelMedium.AutoSize = true;
-            this.labelMedium.Location = new System.Drawing.Point(642, 416);
+            this.labelMedium.Location = new System.Drawing.Point(634, 420);
             this.labelMedium.Name = "labelMedium";
             this.labelMedium.Size = new System.Drawing.Size(44, 13);
             this.labelMedium.TabIndex = 22;
@@ -145,7 +145,7 @@
             // 
             // textBoxMedium
             // 
-            this.textBoxMedium.Location = new System.Drawing.Point(697, 414);
+            this.textBoxMedium.Location = new System.Drawing.Point(689, 418);
             this.textBoxMedium.Name = "textBoxMedium";
             this.textBoxMedium.Size = new System.Drawing.Size(141, 20);
             this.textBoxMedium.TabIndex = 23;
@@ -153,7 +153,7 @@
             // labelStatus
             // 
             this.labelStatus.AutoSize = true;
-            this.labelStatus.Location = new System.Drawing.Point(495, 271);
+            this.labelStatus.Location = new System.Drawing.Point(59, 306);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(37, 13);
             this.labelStatus.TabIndex = 24;
@@ -161,14 +161,14 @@
             // 
             // textBoxStatusOutput
             // 
-            this.textBoxStatusOutput.Location = new System.Drawing.Point(563, 271);
+            this.textBoxStatusOutput.Location = new System.Drawing.Point(127, 306);
             this.textBoxStatusOutput.Name = "textBoxStatusOutput";
             this.textBoxStatusOutput.Size = new System.Drawing.Size(123, 20);
             this.textBoxStatusOutput.TabIndex = 25;
             // 
             // textBoxUpdateDateOutput
             // 
-            this.textBoxUpdateDateOutput.Location = new System.Drawing.Point(563, 236);
+            this.textBoxUpdateDateOutput.Location = new System.Drawing.Point(127, 271);
             this.textBoxUpdateDateOutput.Name = "textBoxUpdateDateOutput";
             this.textBoxUpdateDateOutput.Size = new System.Drawing.Size(123, 20);
             this.textBoxUpdateDateOutput.TabIndex = 26;
@@ -176,15 +176,15 @@
             // dataGridViewInterviewDetails
             // 
             this.dataGridViewInterviewDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewInterviewDetails.Location = new System.Drawing.Point(15, 334);
+            this.dataGridViewInterviewDetails.Location = new System.Drawing.Point(1, 366);
             this.dataGridViewInterviewDetails.Name = "dataGridViewInterviewDetails";
-            this.dataGridViewInterviewDetails.Size = new System.Drawing.Size(561, 269);
+            this.dataGridViewInterviewDetails.Size = new System.Drawing.Size(561, 173);
             this.dataGridViewInterviewDetails.TabIndex = 27;
             // 
             // labelInterviewDetails
             // 
             this.labelInterviewDetails.AutoSize = true;
-            this.labelInterviewDetails.Location = new System.Drawing.Point(15, 315);
+            this.labelInterviewDetails.Location = new System.Drawing.Point(1, 347);
             this.labelInterviewDetails.Name = "labelInterviewDetails";
             this.labelInterviewDetails.Size = new System.Drawing.Size(85, 13);
             this.labelInterviewDetails.TabIndex = 28;
@@ -194,7 +194,7 @@
             // 
             this.labelHowTo.AutoSize = true;
             this.labelHowTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHowTo.Location = new System.Drawing.Point(985, 228);
+            this.labelHowTo.Location = new System.Drawing.Point(973, 180);
             this.labelHowTo.Name = "labelHowTo";
             this.labelHowTo.Size = new System.Drawing.Size(136, 13);
             this.labelHowTo.TabIndex = 30;
@@ -202,7 +202,7 @@
             // 
             // labelUpdateApplicationDetails
             // 
-            this.labelUpdateApplicationDetails.Location = new System.Drawing.Point(951, 277);
+            this.labelUpdateApplicationDetails.Location = new System.Drawing.Point(939, 229);
             this.labelUpdateApplicationDetails.Name = "labelUpdateApplicationDetails";
             this.labelUpdateApplicationDetails.Size = new System.Drawing.Size(208, 34);
             this.labelUpdateApplicationDetails.TabIndex = 32;
@@ -211,7 +211,7 @@
             // 
             // labelAddInterviewDetails
             // 
-            this.labelAddInterviewDetails.Location = new System.Drawing.Point(951, 343);
+            this.labelAddInterviewDetails.Location = new System.Drawing.Point(939, 295);
             this.labelAddInterviewDetails.Name = "labelAddInterviewDetails";
             this.labelAddInterviewDetails.Size = new System.Drawing.Size(208, 34);
             this.labelAddInterviewDetails.TabIndex = 36;
@@ -222,7 +222,7 @@
             // 
             this.labelHowToAddAnInterview.AutoSize = true;
             this.labelHowToAddAnInterview.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHowToAddAnInterview.Location = new System.Drawing.Point(984, 320);
+            this.labelHowToAddAnInterview.Location = new System.Drawing.Point(972, 272);
             this.labelHowToAddAnInterview.Name = "labelHowToAddAnInterview";
             this.labelHowToAddAnInterview.Size = new System.Drawing.Size(142, 13);
             this.labelHowToAddAnInterview.TabIndex = 37;
@@ -230,14 +230,14 @@
             // 
             // textBoxRecruiterName
             // 
-            this.textBoxRecruiterName.Location = new System.Drawing.Point(697, 362);
+            this.textBoxRecruiterName.Location = new System.Drawing.Point(689, 366);
             this.textBoxRecruiterName.Name = "textBoxRecruiterName";
             this.textBoxRecruiterName.Size = new System.Drawing.Size(141, 20);
             this.textBoxRecruiterName.TabIndex = 38;
             // 
             // textBoxInterviewRound
             // 
-            this.textBoxInterviewRound.Location = new System.Drawing.Point(697, 388);
+            this.textBoxInterviewRound.Location = new System.Drawing.Point(689, 392);
             this.textBoxInterviewRound.Name = "textBoxInterviewRound";
             this.textBoxInterviewRound.Size = new System.Drawing.Size(141, 20);
             this.textBoxInterviewRound.TabIndex = 39;
@@ -245,7 +245,7 @@
             // labelInterviewRound
             // 
             this.labelInterviewRound.AutoSize = true;
-            this.labelInterviewRound.Location = new System.Drawing.Point(601, 391);
+            this.labelInterviewRound.Location = new System.Drawing.Point(593, 395);
             this.labelInterviewRound.Name = "labelInterviewRound";
             this.labelInterviewRound.Size = new System.Drawing.Size(85, 13);
             this.labelInterviewRound.TabIndex = 40;
@@ -253,7 +253,7 @@
             // 
             // buttonAddInterview
             // 
-            this.buttonAddInterview.Location = new System.Drawing.Point(610, 501);
+            this.buttonAddInterview.Location = new System.Drawing.Point(610, 491);
             this.buttonAddInterview.Name = "buttonAddInterview";
             this.buttonAddInterview.Size = new System.Drawing.Size(101, 48);
             this.buttonAddInterview.TabIndex = 41;
@@ -262,7 +262,7 @@
             // 
             // buttonUpdateInterview
             // 
-            this.buttonUpdateInterview.Location = new System.Drawing.Point(750, 501);
+            this.buttonUpdateInterview.Location = new System.Drawing.Point(750, 491);
             this.buttonUpdateInterview.Name = "buttonUpdateInterview";
             this.buttonUpdateInterview.Size = new System.Drawing.Size(107, 48);
             this.buttonUpdateInterview.TabIndex = 42;
@@ -272,7 +272,7 @@
             // labelApplicationIDOutput
             // 
             this.labelApplicationIDOutput.BackColor = System.Drawing.SystemColors.Control;
-            this.labelApplicationIDOutput.Location = new System.Drawing.Point(109, 46);
+            this.labelApplicationIDOutput.Location = new System.Drawing.Point(92, 40);
             this.labelApplicationIDOutput.Name = "labelApplicationIDOutput";
             this.labelApplicationIDOutput.Size = new System.Drawing.Size(47, 21);
             this.labelApplicationIDOutput.TabIndex = 44;
@@ -280,7 +280,7 @@
             // labelApplicationID
             // 
             this.labelApplicationID.AutoSize = true;
-            this.labelApplicationID.Location = new System.Drawing.Point(33, 46);
+            this.labelApplicationID.Location = new System.Drawing.Point(16, 40);
             this.labelApplicationID.Name = "labelApplicationID";
             this.labelApplicationID.Size = new System.Drawing.Size(70, 13);
             this.labelApplicationID.TabIndex = 43;
@@ -290,7 +290,7 @@
             // labelApplicationDetails
             // 
             this.labelApplicationDetails.AutoSize = true;
-            this.labelApplicationDetails.Location = new System.Drawing.Point(12, 213);
+            this.labelApplicationDetails.Location = new System.Drawing.Point(9, 161);
             this.labelApplicationDetails.Name = "labelApplicationDetails";
             this.labelApplicationDetails.Size = new System.Drawing.Size(91, 13);
             this.labelApplicationDetails.TabIndex = 46;
@@ -299,7 +299,7 @@
             // dataGridViewApplicationDetails
             // 
             this.dataGridViewApplicationDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewApplicationDetails.Location = new System.Drawing.Point(15, 230);
+            this.dataGridViewApplicationDetails.Location = new System.Drawing.Point(12, 178);
             this.dataGridViewApplicationDetails.Name = "dataGridViewApplicationDetails";
             this.dataGridViewApplicationDetails.Size = new System.Drawing.Size(451, 61);
             this.dataGridViewApplicationDetails.TabIndex = 45;
@@ -308,7 +308,7 @@
             // 
             this.labelUpdatinganInterview.AutoSize = true;
             this.labelUpdatinganInterview.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUpdatinganInterview.Location = new System.Drawing.Point(984, 391);
+            this.labelUpdatinganInterview.Location = new System.Drawing.Point(972, 343);
             this.labelUpdatinganInterview.Name = "labelUpdatinganInterview";
             this.labelUpdatinganInterview.Size = new System.Drawing.Size(132, 13);
             this.labelUpdatinganInterview.TabIndex = 48;
@@ -316,7 +316,7 @@
             // 
             // labelUpdateInterviewDetails
             // 
-            this.labelUpdateInterviewDetails.Location = new System.Drawing.Point(951, 414);
+            this.labelUpdateInterviewDetails.Location = new System.Drawing.Point(939, 366);
             this.labelUpdateInterviewDetails.Name = "labelUpdateInterviewDetails";
             this.labelUpdateInterviewDetails.Size = new System.Drawing.Size(208, 63);
             this.labelUpdateInterviewDetails.TabIndex = 47;
@@ -328,7 +328,7 @@
             // 
             this.labelUpdatingAnApplication.AutoSize = true;
             this.labelUpdatingAnApplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUpdatingAnApplication.Location = new System.Drawing.Point(985, 260);
+            this.labelUpdatingAnApplication.Location = new System.Drawing.Point(973, 212);
             this.labelUpdatingAnApplication.Name = "labelUpdatingAnApplication";
             this.labelUpdatingAnApplication.Size = new System.Drawing.Size(143, 13);
             this.labelUpdatingAnApplication.TabIndex = 49;
@@ -338,7 +338,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1196, 631);
+            this.ClientSize = new System.Drawing.Size(1217, 555);
             this.Controls.Add(this.labelUpdatingAnApplication);
             this.Controls.Add(this.labelUpdatinganInterview);
             this.Controls.Add(this.labelUpdateInterviewDetails);
