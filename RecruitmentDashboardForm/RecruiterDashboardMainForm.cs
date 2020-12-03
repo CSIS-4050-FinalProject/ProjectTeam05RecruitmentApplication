@@ -1,4 +1,5 @@
-﻿using RecruitmentCodeFirstFromDB;
+﻿using ControllerUtilities;
+using RecruitmentCodeFirstFromDB;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,12 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace RecruitmentDashboardForm
 {
     public partial class RecruiterDashboardMainForm : Form
     {
         string role;
+
         public RecruiterDashboardMainForm()
         {
             InitializeComponent();
@@ -25,17 +28,17 @@ namespace RecruitmentDashboardForm
             // Event handlers
 
             // Control Filter Change
-            //comboBoxCompaniesFilter.SelectedIndexChanged += (s, e) => FilterJobList();
-            //radioButtonActiveApplications.CheckedChanged += (s, e) => FilterJobList();
+            comboBoxCompaniesFilter.SelectedIndexChanged += (s, e) => FilterJobList();
+            radioButtonActiveApplications.CheckedChanged += (s, e) => FilterJobList();
 
             // Control listbox selection
-
+            listBoxJobPositions.SelectedIndexChanged += (s, e) => UpdateDashboard();
 
             // Button CLick Listeners
 
             // Update recruitment process for selected role
             UpdateApplicationProgressForm updateApplicationProgressForm;
-            buttonUpdateRole.Click += (s, e) => AddOrUpdateForm<Job>(updateApplicationProgressForm = new UpdateApplicationProgressForm(role));
+            buttonUpdateApplication.Click += (s, e) => AddOrUpdateForm<Job>(updateApplicationProgressForm = new UpdateApplicationProgressForm(role));
 
             // Backup button event handler
             //buttonBackupDB.Click += (s,e) => BackupDataSetToXML(DataSet);
@@ -44,7 +47,13 @@ namespace RecruitmentDashboardForm
         /// <summary>
         /// Initializes default parameters for Filter and Recruiter Dashboard 
         /// </summary>
-        private void RecruiterMainForm_Load() {
+        private void RecruiterMainForm_Load()
+        {
+
+            using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
+            {
+                context.SeedDatabase();
+            }
 
             //Initialize Form Settings
             InitializeFiltersSettings();
@@ -55,25 +64,30 @@ namespace RecruitmentDashboardForm
         /// Sets all default control behaviour of the Dashboard in the form
         /// Clears all labels
         /// </summary>
-        private void InitializeDashboardSettings() {
+        private void InitializeDashboardSettings()
+        {
             //Recruiter Dashboard Settings
             // Set all output labels to blank
             labelSelectedRoleOutput.ResetText();
-            labelSalaryOutput.ResetText();
+            labelRoleStatusOutput.ResetText();
             labelNumberOfRoundsOutput.ResetText();
-            labelCurrentRoundOutput.ResetText();
             labelNumberOfCandidatesOutput.ResetText();
-            labelDateRoleSubmittedOutput.ResetText();
-            labelStatusDateOutput.ResetText();
             labelSalaryOutput.ResetText();
-            labelRoleDescriptionOutput.ResetText();
+
+            //Company labels
+            labelCompanyNameOutput.ResetText();
+            labelHiringDepartmentOutput.ResetText();
+            labelHiringManagerOutput.ResetText();
+            labelCompanySizeOutput.ResetText();
+
         }
 
         /// <summary>
         /// Sets all default control behaviour of theFilters in the form
         /// </summary>
-        private void InitializeFiltersSettings() {
-           
+        private void InitializeFiltersSettings()
+        {
+
             //Filter Settings
             // Set radiobutton to All
             radioButtonActiveApplications.Checked = true;
@@ -82,54 +96,55 @@ namespace RecruitmentDashboardForm
             FillCompaniesComboBox();
 
             // Fill roles listbox
-            FillRolesListBox();       
+            FillRolesListBox();
+
+            //Fill How to use form section
+            FillHowToSection();
         }
 
         /// <summary>
         /// Fills the combobox with a list of unique companies present in the database
         /// </summary>
-        private void FillCompaniesComboBox() {
-
-
+        private void FillCompaniesComboBox()
+        {
             //Fills combobox with distinct companies
 
-            //using (RecruitmentEntities context = Controller<RecruiterEntities, DbSet>.SetContext())
-            //{
-            //var items = context.Companies.Select(c => new
-            //{
-            //    company = c.CompanyName
-            //}).Distinct()
-            //.AsEnumerable().Select(c => new
-            //{
-            //    displayMember = String.Format(c.company)
-            //});
+            using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
+            {
+                var items = context.Companies.Select(c => new
+                {
+                    company = c.Name
+                }).Distinct()
+                .AsEnumerable().Select(c => new
+                {
+                    displayMember = String.Format(c.company)
+                });
 
-            //comboBoxCompaniesFilter.DisplayMember = "displayMember";
-            //comboBoxCompaniesFilter.DataSource = items.ToList();
+                comboBoxCompaniesFilter.DisplayMember = "displayMember";
+                comboBoxCompaniesFilter.DataSource = items.ToList();
 
-            // Default is none selected
-            //comboBoxCompaniesFilter.SelectedIndex = -1;
-            //}
+                // Default is none selected
+                comboBoxCompaniesFilter.SelectedIndex = -1;
+
+            }
         }
 
         /// <summary>
         /// Fills the listbox with all the posotions available according to filter selected
         /// </summary>
-        private void FillRolesListBox() {
+        private void FillRolesListBox()
+        {
             //filters by active roles using unit of work
-            // using (Entities context = Controller<Entities, DbSet>.SetContext())
-            // {
-            //var rolesbyStatus = context.Roles.Where(x => x.Status == "active");
+            using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
+            {
+                var rolesByStatus = context.Jobs;
 
-            //listBoxJobPositions.DataSource = relesByCompany.ToList();
+                foreach (var job in rolesByStatus)
+                {
+                    listBoxJobPositions.Items.Add(job.Description);
+                }
 
-            //Fills listbox
-            List<string> MyList = new List<string>();
-            MyList.Add("Job1");
-            MyList.Add("Job2");
-
-            listBoxJobPositions.DataSource = MyList;
-        //}
+            }
             // Set role listbox to have no jobs selected
             listBoxJobPositions.SelectedIndex = -1;
         }
@@ -138,73 +153,113 @@ namespace RecruitmentDashboardForm
         /// Filter listbox based on radiobutton 
         /// and combobox selection (if applicable)
         /// </summary>
-        private void FilterJobList() {
+        private void FilterJobList()
+        {
 
-            // Resets listbox to no item selected
-            //sets role variable to empty
-            //Empties all labels in Dashboard
-            listBoxJobPositions.SelectedIndex = -1;
-            this.role = "";
-            InitializeDashboardSettings();
+            //TODO: Filter jobs list considering radio and combobox selection
 
-            if (comboBoxCompaniesFilter.SelectedItem != null) {
-                string selectedCompany = comboBoxCompaniesFilter.SelectedItem.ToString();
-                labelStatus.Text = selectedCompany;
+        }
+
+        /// <summary>
+        /// Fill the how to use this form section
+        /// </summary>
+        private void FillHowToSection() {
+            labelStep1Details.Text = "Filter through the roles on the system using the Role Filters, then select a role from the 'Select a Role 'list box.";
+            labelStep2Details.Text = "Once a role is selected the role details will be displayed in the Role Dashboard along with a table of all applications connected to it.";
+            labelSep3Details.Text = "Filter the applications by status using the combobox";
+            labelStep4Details.Text = "to see more details on the application select one application from the 'Application Details' datagrid, and click 'Update Application' button";
+        }
+
+        /// <summary>
+        /// Updates the Recruiter Dashboard
+        /// Takes the role selected by the list box and fills the dashboard with details about that role and it's applications
+        /// </summary>
+        private void UpdateDashboard()
+        {
+            this.role = listBoxJobPositions.SelectedItem.ToString();
+
+            using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
+            {
+                var getRoleDetails = context.Jobs.Find(listBoxJobPositions.SelectedIndex);
+                int jobID = getRoleDetails.JobId;
+                int companyID = getRoleDetails.CompanyId;
+
+                // Initialize Role depedent labels
+                labelSelectedRoleOutput.Text = role;
+
+                //TODO: Get radiobutton
+                //labelRoleStatusOutput.Text = ;
+
+
+                var getApplications = context.Applications.Where(a => a.JobId == jobID).ToList().Count();
+                labelNumberOfCandidatesOutput.Text = getApplications.ToString();
+
+                labelNumberOfRoundsOutput.Text = getRoleDetails.RoundsRequired.ToString();
+                labelSalaryOutput.Text = getRoleDetails.Salary.ToString();
+
+                var getCompany = from company in context.Companies
+                                           where company.CompanyId == companyID
+                                           select company;
+
+                //Company labels
+                foreach (var c in getCompany) {
+                    labelCompanyNameOutput.Text = c.Name;
+                    labelHiringDepartmentOutput.Text = c.HiringDepartment;
+                    labelHiringManagerOutput.Text = c.HiringManager;
+                    labelCompanySizeOutput.Text = c.Size.ToString();
+                }
+
+                //Initialize Application Status Combobox
+                FillApplicationStatusComboBox();
+
+                //Initialize datagridviews
+
+                //TODO: Filter so that the only applications information that shows is the one that matches the jobID for the role selected
+
+                //TODO: Filter so that the only perks that show are the ones that matches the the role selected
             }
 
+        }
 
-           // using (Entities context = Controller<Entities, DbSet>.SetContext())
-           // {
-                if (radioButtonActiveApplications.Checked == true)
+        /// <summary>
+        /// Fills the application status with a list of unique status present in the database
+        /// </summary>
+        private void FillApplicationStatusComboBox()
+        {
+            //Fills combobox with distinct status
+
+            using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
+            {
+                var items = context.Applications.Select(c => new
                 {
-                    if (comboBoxCompaniesFilter.SelectedItem.ToString() != "")
-                    {
-                        //var rolesbyCompanyAndStatus = context.Roles.Where(x => x.Company.CompanyName == selectedCompany && x => x.Status == "active");
-
-                        //listBoxJobPositions.DataSource = rolesbyCompanyAndStatus.ToList();
-                    }
-                    else
-                    {
-                        FillRolesListBox();
-                    }
-                }
-                if (radioButtonFinalizedApplications.Checked == true)
+                    status = c.Status
+                }).Distinct()
+                .AsEnumerable().Select(c => new
                 {
+                    displayMember = String.Format(c.status)
+                });
 
-                    if (comboBoxCompaniesFilter.SelectedItem.ToString() != "")
-                    {
-                        //var rolesbyCompanyAndStatus = context.Roles.Where(x => x.Company.CompanyName == selectedCompany && x => x.Status == "finalized");
+                comboBoxApplicationStatus.DisplayMember = "displayMember";
+                comboBoxApplicationStatus.DataSource = items.ToList();
 
-                        //listBoxJobPositions.DataSource = rolesByCompany.ToList();
-                    }
-                    var selectedStatus = "finalized";
-                    //var rolesbyStatus = context.Roles.Where(x => x.Status == selectedStatus);
+                // Default is none selected
+                comboBoxApplicationStatus.SelectedIndex = -1;
 
-                    //listBoxJobPositions.DataSource = rolesByStatus.ToList();
-
-              //  }
             }
         }
 
-        private void UpdateDashboard() {
-            this.role = listBoxJobPositions.SelectedItem.ToString();
+        private void InitializeDataGridView<T>(DataGridView gridView, params string[] columnsToHide) where T : class
+        {
+            //Sets grid controls
+            gridView.AllowUserToAddRows = false;
+            gridView.AllowUserToDeleteRows = false;
+            gridView.ReadOnly = true;
+            gridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            //Not sure, must test this
-            //if (!(listBox1.SelectedItem is Department department))
-            //    return;
-            //label1.Text = department.DepartmentCode;
-            //label2.Text = department.DepartmentName;
+            gridView.DataSource = Controller<RecruitmentEntities, T>.SetBindingList();
 
-            labelSelectedRoleOutput.Text = role;
-            //labelStatusOutput.Text = ;
-            labelNumberOfRoundsOutput.ResetText();
-            labelCurrentRoundOutput.ResetText();
-            labelNumberOfCandidatesOutput.ResetText();
-            labelDateRoleSubmittedOutput.ResetText();
-            labelStatusDateOutput.ResetText();
-            labelSalaryOutput.ResetText();
-            labelRoleDescriptionOutput.ResetText();
-            //}
+            foreach (string column in columnsToHide)
+                gridView.Columns[column].Visible = false;
         }
 
         /// <summary>
@@ -221,7 +276,7 @@ namespace RecruitmentDashboardForm
 
             if (result == DialogResult.OK)
             {
-                
+
             }
 
             //Hide Form
