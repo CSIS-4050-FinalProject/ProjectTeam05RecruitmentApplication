@@ -180,7 +180,7 @@ namespace RecruitmentDashboardForm
 
             using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
             {
-                var getRoleDetails = context.Jobs.Find(listBoxJobPositions.SelectedIndex);
+                var getRoleDetails = context.Jobs.Find(listBoxJobPositions.SelectedIndex + 1); // Harmeet: index starts from 0 and job id starts from 1.
                 int jobID = getRoleDetails.JobId;
                 int companyID = getRoleDetails.CompanyId;
 
