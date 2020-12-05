@@ -30,6 +30,7 @@ namespace RecruitmentDashboardForm
             // Control Filter Change
             comboBoxCompaniesFilter.SelectedIndexChanged += (s, e) => FilterJobList();
             radioButtonActiveApplications.CheckedChanged += (s, e) => FilterJobList();
+            radioButtonFinalizedApplications.CheckedChanged += (s, e) => FilterJobList();
 
             // Control listbox selection
             listBoxJobPositions.SelectedIndexChanged += (s, e) => UpdateDashboard();
@@ -125,7 +126,6 @@ namespace RecruitmentDashboardForm
 
                 // Default is none selected
                 comboBoxCompaniesFilter.SelectedIndex = -1;
-
             }
         }
 
@@ -135,6 +135,7 @@ namespace RecruitmentDashboardForm
         private void FillRolesListBox()
         {
             //filters by active roles using unit of work
+            listBoxJobPositions.Items.Clear();
             using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
             {
                 var rolesByStatus = context.Jobs;
@@ -162,18 +163,34 @@ namespace RecruitmentDashboardForm
             listBoxJobPositions.Items.Clear();
             using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
             {
+                var filteredRoles = from job in context.Jobs
+                                    select job;
                 if (comboBoxCompaniesFilter.SelectedIndex != -1)
                 {
-                    var rolesByStatus = from job in context.Jobs
+                    filteredRoles = from job in filteredRoles
                                         join company in context.Companies on job.CompanyId equals company.CompanyId
                                         where company.Name.Equals(comboBoxCompaniesFilter.Text)
                                         select job;
-                    foreach (var job in rolesByStatus)
-                    {
-                        listBoxJobPositions.Items.Add(job.JobId + ": " + job.Description);
-                    }
                 }
 
+                if (radioButtonActiveApplications.Checked == true)
+                {
+                    filteredRoles = from job in filteredRoles
+                                    where job.Active == 1
+                                    select job;
+                }
+
+                if (radioButtonFinalizedApplications.Checked == true)
+                {
+                    filteredRoles = from job in filteredRoles
+                                    where job.Active == 0
+                                    select job;
+                }
+
+                foreach (var job in filteredRoles)
+                {
+                    listBoxJobPositions.Items.Add(job.JobId + ": " + job.Description);
+                }
             }
             // Set role listbox to have no jobs selected
             listBoxJobPositions.SelectedIndex = -1;
@@ -212,27 +229,28 @@ namespace RecruitmentDashboardForm
                 /*Harmeet*/this.role = getRoleDetails.Description; // Harmeet: Getting the job description from the job found in the database using selected role
                 labelSelectedRoleOutput.Text = role;
 
-                //TODO: Get radiobutton
-                //labelRoleStatusOutput.Text = ;
-
-
                 var getApplications = context.Applications.Where(a => a.JobId == jobID).ToList().Count();
                 labelNumberOfCandidatesOutput.Text = getApplications.ToString();
 
                 labelNumberOfRoundsOutput.Text = getRoleDetails.RoundsRequired.ToString();
                 labelSalaryOutput.Text = getRoleDetails.Salary.ToString();
 
+                if (getRoleDetails.Active == 1)
+                    labelRoleStatusOutput.Text = "Active";
+                else
+                    labelRoleStatusOutput.Text = "Finalized";   
+
                 var getCompany = from company in context.Companies
                                            where company.CompanyId == companyID
                                            select company;
 
                 //Company labels
-                foreach (var c in getCompany) {
-                    labelCompanyNameOutput.Text = c.Name;
-                    labelHiringDepartmentOutput.Text = c.HiringDepartment;
-                    labelHiringManagerOutput.Text = c.HiringManager;
-                    labelCompanySizeOutput.Text = c.Size.ToString();
-                }
+                //foreach (var c in getCompany) {
+                //    labelCompanyNameOutput.Text = c.Name;
+                //    labelHiringDepartmentOutput.Text = c.HiringDepartment;
+                //    labelHiringManagerOutput.Text = c.HiringManager;
+                //    labelCompanySizeOutput.Text = c.Size.ToString();
+                //}
 
                 var getCompanyDetails = context.Companies.Find(companyID);
                 labelCompanyNameOutput.Text = getCompanyDetails.Name;
@@ -244,6 +262,7 @@ namespace RecruitmentDashboardForm
                 FillApplicationStatusComboBox();
 
                 //Initialize datagridviews
+                InitializeDataGridView<Application>(dataGridViewApplicationDetails);
 
                 //TODO: Filter so that the only applications information that shows is the one that matches the jobID for the role selected
 
