@@ -51,26 +51,26 @@ SET IDENTITY_INSERT [dbo].[Company] OFF
 
 -- 20 Jobs
 SET IDENTITY_INSERT [dbo].[Job] ON
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (1,  20, 1, 'Web Designer', 76626);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (2, 8, 3, 'Bus Driver', 35786);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (3, 6, 3, 'Nurse', 64405);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (4, 13, 2, 'Big Data Analyst', 70005);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (5,  6, 3, 'Teacher', 64010);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (6, 12, 3, 'Bus Driver', 55495);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (7,  13, 2, 'Nurse', 44739);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (8, 2, 2, 'CEO', 43718);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (9, 9, 2, 'Construction Worker', 90075);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (10, 5, 1, 'Truck Driver', 63848);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (11, 11, 1, 'Financial Advisor', 63181);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (12, 18, 2, 'Programmer', 53837);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (13, 5, 2, 'Fire Fighter', 87686);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (14, 10, 2, 'Bus Driver', 51974);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (15, 18, 3, 'Bus Driver', 82307);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (16, 10, 0, 'CEO', 56211);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (17, 5, 1, 'Teacher', 98344);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (18, 16, 3, 'Bus Driver', 49579);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (19, 1, 2, 'Plumber', 97517);
-insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary) values (20, 8, 3, 'CEO', 38403);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (1,  20, 1, 'Web Designer', 76626, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (2, 8, 3, 'Bus Driver', 35786, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (3, 6, 3, 'Nurse', 64405, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (4, 13, 2, 'Big Data Analyst', 70005, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (5,  6, 3, 'Teacher', 64010, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (6, 12, 3, 'Bus Driver', 55495, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (7,  13, 2, 'Nurse', 44739, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (8, 2, 2, 'CEO', 43718, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (9, 9, 2, 'Construction Worker', 90075, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (10, 5, 1, 'Truck Driver', 63848, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (11, 11, 1, 'Financial Advisor', 63181, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (12, 18, 2, 'Programmer', 53837, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (13, 5, 2, 'Fire Fighter', 87686, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (14, 10, 2, 'Bus Driver', 51974, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (15, 18, 3, 'Bus Driver', 82307, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (16, 10, 0, 'CEO', 56211, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (17, 5, 1, 'Teacher', 98344, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (18, 16, 3, 'Bus Driver', 49579, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (19, 1, 2, 'Plumber', 97517, 1);
+insert into Job (JobId, CompanyId, RoundsRequired, Description, Salary, Active) values (20, 8, 3, 'CEO', 38403, 1);
 SET IDENTITY_INSERT [dbo].[Job] OFF
 
  --50 candidates

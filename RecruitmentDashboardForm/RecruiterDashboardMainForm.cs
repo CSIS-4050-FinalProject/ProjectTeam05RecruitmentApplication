@@ -141,7 +141,8 @@ namespace RecruitmentDashboardForm
 
                 foreach (var job in rolesByStatus)
                 {
-                    listBoxJobPositions.Items.Add(job.Description);
+                    //listBoxJobPositions.Items.Add(job.Description);
+                    /*Harmeet*/listBoxJobPositions.Items.Add(job.JobId + ": " + job.Description); // adding job id to the list to fetch the job id for 
                 }
 
             }
@@ -157,6 +158,25 @@ namespace RecruitmentDashboardForm
         {
 
             //TODO: Filter jobs list considering radio and combobox selection
+
+            listBoxJobPositions.Items.Clear();
+            using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
+            {
+                if (comboBoxCompaniesFilter.SelectedIndex != -1)
+                {
+                    var rolesByStatus = from job in context.Jobs
+                                        join company in context.Companies on job.CompanyId equals company.CompanyId
+                                        where company.Name.Equals(comboBoxCompaniesFilter.Text)
+                                        select job;
+                    foreach (var job in rolesByStatus)
+                    {
+                        listBoxJobPositions.Items.Add(job.JobId + ": " + job.Description);
+                    }
+                }
+
+            }
+            // Set role listbox to have no jobs selected
+            listBoxJobPositions.SelectedIndex = -1;
 
         }
 
@@ -176,15 +196,20 @@ namespace RecruitmentDashboardForm
         /// </summary>
         private void UpdateDashboard()
         {
-            this.role = listBoxJobPositions.SelectedItem.ToString();
+            //this.role = listBoxJobPositions.SelectedItem.ToString();
 
             using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
             {
-                var getRoleDetails = context.Jobs.Find(listBoxJobPositions.SelectedIndex + 1); // Harmeet: index starts from 0 and job id starts from 1.
+                //var getRoleDetails = context.Jobs.Find(listBoxJobPositions.SelectedIndex + 1); // Harmeet: index starts from 0 and job id starts from 1.
+                
+                String selectedRole = listBoxJobPositions.SelectedItem.ToString();
+                int index = selectedRole.IndexOf(":");
+                /*Harmeet*/var getRoleDetails = context.Jobs.Find(Int16.Parse(selectedRole.Substring(0, index)));
                 int jobID = getRoleDetails.JobId;
                 int companyID = getRoleDetails.CompanyId;
 
                 // Initialize Role depedent labels
+                /*Harmeet*/this.role = getRoleDetails.Description; // Harmeet: Getting the job description from the job found in the database using selected role
                 labelSelectedRoleOutput.Text = role;
 
                 //TODO: Get radiobutton
@@ -208,6 +233,12 @@ namespace RecruitmentDashboardForm
                     labelHiringManagerOutput.Text = c.HiringManager;
                     labelCompanySizeOutput.Text = c.Size.ToString();
                 }
+
+                var getCompanyDetails = context.Companies.Find(companyID);
+                labelCompanyNameOutput.Text = getCompanyDetails.Name;
+                labelHiringDepartmentOutput.Text = getCompanyDetails.HiringDepartment;
+                labelHiringManagerOutput.Text = getCompanyDetails.HiringManager;
+                labelCompanySizeOutput.Text = getCompanyDetails.Size.ToString();
 
                 //Initialize Application Status Combobox
                 FillApplicationStatusComboBox();

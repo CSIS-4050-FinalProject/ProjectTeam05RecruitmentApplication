@@ -69,7 +69,4 @@
   <ItemGroup>
     <PostDeploy Include="SeedSampleData.sql" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="RecruitmentDB.publish.xml" />
-  </ItemGroup>
 </Project>

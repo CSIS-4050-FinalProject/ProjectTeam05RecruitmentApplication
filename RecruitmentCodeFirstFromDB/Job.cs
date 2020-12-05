@@ -28,6 +28,8 @@ namespace RecruitmentCodeFirstFromDB
 
         public int Salary { get; set; }
 
+        public int Active { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Application> Applications { get; set; }
 

@@ -5,6 +5,7 @@
     [RoundsRequired] INT NULL , 
     [Description] NVARCHAR(50) NOT NULL, 
     [Salary] INT NOT NULL, 
-     CONSTRAINT [FK_Job_Company] FOREIGN KEY ([CompanyId]) REFERENCES [Company] ([CompanyId]),
+     [Active] INT NOT NULL, 
+    CONSTRAINT [FK_Job_Company] FOREIGN KEY ([CompanyId]) REFERENCES [Company] ([CompanyId]),
 
 )
