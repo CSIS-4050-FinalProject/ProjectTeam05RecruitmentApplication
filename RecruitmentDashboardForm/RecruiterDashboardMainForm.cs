@@ -31,6 +31,7 @@ namespace RecruitmentDashboardForm
             comboBoxCompaniesFilter.SelectedIndexChanged += (s, e) => FilterJobList();
             radioButtonActiveApplications.CheckedChanged += (s, e) => FilterJobList();
             radioButtonFinalizedApplications.CheckedChanged += (s, e) => FilterJobList();
+            //comboBoxApplicationStatus.SelectedIndexChanged += (s, e) => FilterApplicationList();
 
             // Control listbox selection
             listBoxJobPositions.SelectedIndexChanged += (s, e) => UpdateDashboard();
@@ -218,15 +219,17 @@ namespace RecruitmentDashboardForm
             using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
             {
                 //var getRoleDetails = context.Jobs.Find(listBoxJobPositions.SelectedIndex + 1); // Harmeet: index starts from 0 and job id starts from 1.
-                
+
                 String selectedRole = listBoxJobPositions.SelectedItem.ToString();
                 int index = selectedRole.IndexOf(":");
-                /*Harmeet*/var getRoleDetails = context.Jobs.Find(Int16.Parse(selectedRole.Substring(0, index)));
+                /*Harmeet*/
+                var getRoleDetails = context.Jobs.Find(Int16.Parse(selectedRole.Substring(0, index)));
                 int jobID = getRoleDetails.JobId;
                 int companyID = getRoleDetails.CompanyId;
 
                 // Initialize Role depedent labels
-                /*Harmeet*/this.role = getRoleDetails.Description; // Harmeet: Getting the job description from the job found in the database using selected role
+                /*Harmeet*/
+                this.role = getRoleDetails.Description; // Harmeet: Getting the job description from the job found in the database using selected role
                 labelSelectedRoleOutput.Text = role;
 
                 var getApplications = context.Applications.Where(a => a.JobId == jobID).ToList().Count();
@@ -238,11 +241,11 @@ namespace RecruitmentDashboardForm
                 if (getRoleDetails.Active == 1)
                     labelRoleStatusOutput.Text = "Active";
                 else
-                    labelRoleStatusOutput.Text = "Finalized";   
+                    labelRoleStatusOutput.Text = "Finalized";
 
                 var getCompany = from company in context.Companies
-                                           where company.CompanyId == companyID
-                                           select company;
+                                 where company.CompanyId == companyID
+                                 select company;
 
                 //Company labels
                 //foreach (var c in getCompany) {
@@ -262,14 +265,25 @@ namespace RecruitmentDashboardForm
                 FillApplicationStatusComboBox();
 
                 //Initialize datagridviews
-                InitializeDataGridView<Application>(dataGridViewApplicationDetails);
+                InitializeDataGridView<RecruitmentCodeFirstFromDB.Application>(dataGridViewApplicationDetails, "Candidate", "Job", "Interviews");
 
                 //TODO: Filter so that the only applications information that shows is the one that matches the jobID for the role selected
+                for(int i = 0; i < dataGridViewApplicationDetails.Rows.Count; i++)
+                {
+                    if(!string.Equals(dataGridViewApplicationDetails[1,i].Value.ToString(), jobID.ToString()))
+                    {
+                        dataGridViewApplicationDetails.Rows.RemoveAt(i);
+                        i--;
+                    }
+                }
 
                 //TODO: Get application number when selected application in the datagrid and instantiate the application
                 applicationID = 2;
 
+
                 //TODO: Filter so that the only perks that show are the ones that matches the the role selected
+                InitializeDataGridView<RecruitmentCodeFirstFromDB.Perk>(dataGridViewPerksOutput, "Jobs");
+
             }
 
         }
