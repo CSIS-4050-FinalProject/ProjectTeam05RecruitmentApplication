@@ -26,8 +26,151 @@ namespace RecruitmentDashboardForm
             //get role and application
             this.role = role;
             this.applicationID = application;
-
             InitializeComponent();
+
+            this.buttonUpdateApplication.Click += (s, e) => UpdateApplication();
+            this.buttonAddInterview.Click += (s, e) => AddInterview();
+            this.buttonUpdateInterview.Click += (s, e) => UpdateInterview();
+            this.dataGridViewInterviewDetails.Click += (s, e) => UpdateInterviewFields();
+
+
+        }
+
+        private void UpdateInterviewFields()
+        {
+            if (dataGridViewInterviewDetails.SelectedRows.Count > 0)
+            {
+                textBoxRecruiterName.Text = dataGridViewInterviewDetails.SelectedRows[0].Cells[2].Value.ToString();
+                textBoxInterviewRound.Text = dataGridViewInterviewDetails.SelectedRows[0].Cells[1].Value.ToString();
+                textBoxMedium.Text = dataGridViewInterviewDetails.SelectedRows[0].Cells[3].Value.ToString();
+                textBoxScore.Text = dataGridViewInterviewDetails.SelectedRows[0].Cells[4].Value.ToString();
+            }
+        }
+
+        private void UpdateInterview()
+        {
+            int interviewId;
+            using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
+            {
+                if (textBoxRecruiterName.Text.ToString() == "" ||
+                    textBoxInterviewRound.Text.ToString() == "" ||
+                    textBoxMedium.Text.ToString() == "" ||
+                    textBoxScore.Text.ToString() == "")
+                {
+                    MessageBox.Show("Please enter all interview fields!");
+                    return;
+                }
+
+                string inputRecruiterName = textBoxRecruiterName.Text.ToString();
+                string inputInterviewRound = textBoxInterviewRound.Text.ToString();
+                string inputMedium = textBoxMedium.Text.ToString();
+                string inputScore = textBoxScore.Text.ToString();
+
+                int intInterviewRound, intScore;
+                if (!Int32.TryParse(inputInterviewRound, out intInterviewRound))
+                {
+                    MessageBox.Show("Please enter the interview rounds in numeric form!");
+                    return;
+                }
+                if (!Int32.TryParse(inputScore, out intScore))
+                {
+                    MessageBox.Show("Please enter the score in numeric form!");
+                    return;
+                }
+
+                if (dataGridViewInterviewDetails.SelectedRows.Count < 1)
+                {
+                    MessageBox.Show("Please select the interview first!");
+                    return;
+                }
+
+                interviewId = Int32.Parse(dataGridViewInterviewDetails.SelectedRows[0].Cells[0].Value.ToString());
+
+                Interview newInterview = context.Interviews.Find(interviewId);
+                newInterview.RecruiterName = inputRecruiterName;
+                newInterview.InterviewRound = intInterviewRound;
+                newInterview.ApplicationId = this.applicationID;
+                newInterview.Medium = inputMedium;
+                newInterview.Score = intScore;
+
+                context.SaveChanges();
+
+                InitializeUpdateForm();
+            }
+        }
+
+        private void AddInterview()
+        {
+            using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
+            {
+                if (textBoxRecruiterName.Text.ToString() == "" || 
+                    textBoxInterviewRound.Text.ToString() == "" ||
+                    textBoxMedium.Text.ToString() == "" ||
+                    textBoxScore.Text.ToString() == "")
+                {
+                    MessageBox.Show("Please enter all interview fields!");
+                    return;
+                }
+
+                string inputRecruiterName = textBoxRecruiterName.Text.ToString();
+                string inputInterviewRound = textBoxInterviewRound.Text.ToString();
+                string inputMedium = textBoxMedium.Text.ToString();
+                string inputScore = textBoxScore.Text.ToString();
+
+                int intInterviewRound, intScore;
+                if (!Int32.TryParse(inputInterviewRound, out intInterviewRound))
+                {
+                    MessageBox.Show("Please enter the interview rounds in numeric form!");
+                    return;
+                }
+                if (!Int32.TryParse(inputScore, out intScore))
+                {
+                    MessageBox.Show("Please enter the score in numeric form!");
+                    return;
+                }
+
+                Interview newInterview = new Interview() {
+                    RecruiterName = inputRecruiterName,
+                    InterviewRound = intInterviewRound,
+                    ApplicationId = this.applicationID,
+                    Medium = inputMedium,
+                    Score = intScore
+                };
+                
+
+                context.Interviews.Add(newInterview);
+                context.SaveChanges();
+
+                InitializeUpdateForm();
+            }
+        }
+
+        private void UpdateApplication()
+        {
+            using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
+            {
+                if(textBoxUpdateDateOutput.Text.ToString() == "" || textBoxStatusOutput.Text.ToString() == "")
+                {
+                    MessageBox.Show("Please enter both update fields!");
+                    return;
+                }
+
+                string inputDate = textBoxUpdateDateOutput.Text.ToString();
+                string inputStatus = textBoxStatusOutput.Text.ToString();
+
+                DateTime applicationDate;
+
+                if (!DateTime.TryParse(inputDate, out applicationDate))
+                {
+                    MessageBox.Show("Please enter the date in correct form!");
+                    return;
+                }
+                context.Applications.Find(applicationID).StatusDate = applicationDate;
+                context.Applications.Find(applicationID).Status = inputStatus;
+                context.SaveChanges();
+
+                InitializeUpdateForm();
+            }
         }
 
 
@@ -54,6 +197,16 @@ namespace RecruitmentDashboardForm
 
             using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
             {
+                if (context.Applications.Find(applicationID).Status.Equals("discarded") ||
+                    context.Applications.Find(applicationID).Status.Equals("hired"))
+                {
+                    buttonAddInterview.Enabled = false;
+                }
+                else
+                {
+                    buttonAddInterview.Enabled = true;
+                }
+
                 //get candidateID from Application Table
                 var getApplicationDetails = context.Applications.Find(applicationID);
                 var cadidateID = getApplicationDetails.CandidateId;

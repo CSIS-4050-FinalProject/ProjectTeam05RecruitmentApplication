@@ -17,7 +17,7 @@ namespace RecruitmentDashboardForm
     public partial class RecruiterDashboardMainForm : Form
     {
         string role;
-        int applicationID;
+        int applicationID = -1;
         public RecruiterDashboardMainForm()
         {
             InitializeComponent();
@@ -31,19 +31,29 @@ namespace RecruitmentDashboardForm
             comboBoxCompaniesFilter.SelectedIndexChanged += (s, e) => FilterJobList();
             radioButtonActiveApplications.CheckedChanged += (s, e) => FilterJobList();
             radioButtonFinalizedApplications.CheckedChanged += (s, e) => FilterJobList();
-            //comboBoxApplicationStatus.SelectedIndexChanged += (s, e) => FilterApplicationList();
+            comboBoxApplicationStatus.SelectedIndexChanged += (s, e) => FilterApplicationList();
 
             // Control listbox selection
             listBoxJobPositions.SelectedIndexChanged += (s, e) => UpdateDashboard();
 
             // Button CLick Listeners
+            buttonUpdateApplication.Click += (s, e) => AddOrUpdateForm<Job>();
 
             // Update recruitment process for selected role
-            UpdateApplicationProgressForm updateApplicationProgressForm;
-            buttonUpdateApplication.Click += (s, e) => AddOrUpdateForm<Job>(updateApplicationProgressForm = new UpdateApplicationProgressForm(role, applicationID));
 
             // Backup button event handler
             //buttonBackupDB.Click += (s,e) => BackupDataSetToXML(DataSet);
+        }
+        private void FilterApplicationList()
+        {
+            using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
+            {
+                string status = comboBoxCompaniesFilter.SelectedText.ToString();
+                var getApplication = from app in context.Applications
+                                     where app.Status.Equals(status)
+                                     select app;
+                dataGridViewApplicationDetails.DataSource = getApplication.ToList();
+            }
         }
 
         /// <summary>
@@ -278,12 +288,11 @@ namespace RecruitmentDashboardForm
                 }
 
                 //TODO: Get application number when selected application in the datagrid and instantiate the application
-                applicationID = 2;
 
 
                 //TODO: Filter so that the only perks that show are the ones that matches the the role selected
-                InitializeDataGridView<RecruitmentCodeFirstFromDB.Perk>(dataGridViewPerksOutput, "Jobs");
-
+                //InitializeDataGridView<Job>(dataGridViewPerksOutput);
+                InitializeDataGridViewJobPerks(jobID);
             }
 
         }
@@ -329,25 +338,69 @@ namespace RecruitmentDashboardForm
                 gridView.Columns[column].Visible = false;
         }
 
+        public void InitializeDataGridViewJobPerks(int jobId)
+        {
+            //Sets grid controls
+            dataGridViewPerksOutput.AllowUserToAddRows = false;
+            dataGridViewPerksOutput.AllowUserToDeleteRows = false;
+            dataGridViewPerksOutput.ReadOnly = true;
+            dataGridViewPerksOutput.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dataGridViewPerksOutput.Columns.Clear();
+
+            DataGridViewTextBoxColumn[] Columns = new DataGridViewTextBoxColumn[]
+            {
+                new DataGridViewTextBoxColumn() {Name = "PerkID"},
+                new DataGridViewTextBoxColumn() {Name = "Description"},
+                new DataGridViewTextBoxColumn() {Name = "Amount"},
+                new DataGridViewTextBoxColumn() {Name = "AvailableAfterMonth"}
+            };
+
+            dataGridViewPerksOutput.Columns.AddRange(Columns);
+            
+            using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
+            {
+                foreach (Job job in context.Jobs)
+                {
+                    if (job.JobId == jobId)
+                        foreach (Perk perk in job.Perks)
+                        {
+                            dataGridViewPerksOutput.Rows.Add(perk.PerkId, perk.Description, perk.Amount, perk.AvailableAfterMonth);
+                        }
+                }
+            }
+        }
+
         /// <summary>
         /// Generic method to display a form and then update the relevant gridviews.
         /// </summary>
         /// <typeparam name="T">Data type associated with the gridview</typeparam>
         /// <param name="dataGridView">DataGridView to be updated with new data from DB</param>
         /// <param name="form"></param>
-        private void AddOrUpdateForm<T>(Form form) where T : class
+        private void AddOrUpdateForm<T>() where T : class
         {
-            var result = form.ShowDialog();
-
-            // form has closed
-
-            if (result == DialogResult.OK)
+            if (dataGridViewApplicationDetails.SelectedRows.Count > 0)
             {
+                applicationID = Int16.Parse(dataGridViewApplicationDetails.SelectedRows[0].Cells[0].Value.ToString());
+                UpdateApplicationProgressForm form = new UpdateApplicationProgressForm(role, applicationID);
+                var result = form.ShowDialog();
 
+                // form has closed
+
+                if (result == DialogResult.OK)
+                {
+
+                }
+
+                UpdateDashboard();
+                //Hide Form
+                form.Hide();
             }
 
-            //Hide Form
-            form.Hide();
+            else
+            {
+                MessageBox.Show("Please select application first !");
+            }
         }
 
         /// <summary>
