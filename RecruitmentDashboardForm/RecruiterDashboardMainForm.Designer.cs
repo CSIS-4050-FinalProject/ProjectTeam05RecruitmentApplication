@@ -64,8 +64,6 @@
             this.dataGridViewApplicationDetails = new System.Windows.Forms.DataGridView();
             this.labelApplicationDetails = new System.Windows.Forms.Label();
             this.labelRoleInformation = new System.Windows.Forms.Label();
-            this.comboBoxApplicationStatus = new System.Windows.Forms.ComboBox();
-            this.labelApplicationStatus = new System.Windows.Forms.Label();
             this.labelHowToMainForm = new System.Windows.Forms.Label();
             this.labelMainFormStep1 = new System.Windows.Forms.Label();
             this.labelMainFormStep2 = new System.Windows.Forms.Label();
@@ -171,7 +169,7 @@
             // 
             this.labelAdminTools.AutoSize = true;
             this.labelAdminTools.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAdminTools.Location = new System.Drawing.Point(1553, 569);
+            this.labelAdminTools.Location = new System.Drawing.Point(1272, 569);
             this.labelAdminTools.Name = "labelAdminTools";
             this.labelAdminTools.Size = new System.Drawing.Size(128, 24);
             this.labelAdminTools.TabIndex = 44;
@@ -179,7 +177,7 @@
             // 
             // buttonBackupDB
             // 
-            this.buttonBackupDB.Location = new System.Drawing.Point(1536, 608);
+            this.buttonBackupDB.Location = new System.Drawing.Point(1255, 608);
             this.buttonBackupDB.Name = "buttonBackupDB";
             this.buttonBackupDB.Size = new System.Drawing.Size(168, 52);
             this.buttonBackupDB.TabIndex = 45;
@@ -188,7 +186,7 @@
             // 
             // buttonUpdateApplication
             // 
-            this.buttonUpdateApplication.Location = new System.Drawing.Point(1272, 110);
+            this.buttonUpdateApplication.Location = new System.Drawing.Point(1044, 111);
             this.buttonUpdateApplication.Name = "buttonUpdateApplication";
             this.buttonUpdateApplication.Size = new System.Drawing.Size(168, 52);
             this.buttonUpdateApplication.TabIndex = 69;
@@ -199,7 +197,7 @@
             // 
             this.labelCompanyInformation.AutoSize = true;
             this.labelCompanyInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCompanyInformation.Location = new System.Drawing.Point(251, 308);
+            this.labelCompanyInformation.Location = new System.Drawing.Point(303, 303);
             this.labelCompanyInformation.Name = "labelCompanyInformation";
             this.labelCompanyInformation.Size = new System.Drawing.Size(125, 13);
             this.labelCompanyInformation.TabIndex = 67;
@@ -209,17 +207,18 @@
             // 
             this.labelSelectedRoleOutput.BackColor = System.Drawing.SystemColors.Control;
             this.labelSelectedRoleOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelSelectedRoleOutput.Location = new System.Drawing.Point(353, 124);
+            this.labelSelectedRoleOutput.Location = new System.Drawing.Point(405, 119);
             this.labelSelectedRoleOutput.Name = "labelSelectedRoleOutput";
-            this.labelSelectedRoleOutput.Size = new System.Drawing.Size(197, 23);
+            this.labelSelectedRoleOutput.Size = new System.Drawing.Size(134, 23);
             this.labelSelectedRoleOutput.TabIndex = 64;
+            this.labelSelectedRoleOutput.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelSelectedPosition
             // 
             this.labelSelectedPosition.AutoSize = true;
             this.labelSelectedPosition.BackColor = System.Drawing.SystemColors.Control;
             this.labelSelectedPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSelectedPosition.Location = new System.Drawing.Point(251, 130);
+            this.labelSelectedPosition.Location = new System.Drawing.Point(303, 125);
             this.labelSelectedPosition.Name = "labelSelectedPosition";
             this.labelSelectedPosition.Size = new System.Drawing.Size(87, 13);
             this.labelSelectedPosition.TabIndex = 63;
@@ -228,7 +227,7 @@
             // dataGridViewPerksOutput
             // 
             this.dataGridViewPerksOutput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPerksOutput.Location = new System.Drawing.Point(254, 493);
+            this.dataGridViewPerksOutput.Location = new System.Drawing.Point(228, 491);
             this.dataGridViewPerksOutput.Name = "dataGridViewPerksOutput";
             this.dataGridViewPerksOutput.Size = new System.Drawing.Size(306, 169);
             this.dataGridViewPerksOutput.TabIndex = 58;
@@ -237,7 +236,7 @@
             // 
             this.labelPerks.AutoSize = true;
             this.labelPerks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPerks.Location = new System.Drawing.Point(254, 477);
+            this.labelPerks.Location = new System.Drawing.Point(228, 475);
             this.labelPerks.Name = "labelPerks";
             this.labelPerks.Size = new System.Drawing.Size(39, 13);
             this.labelPerks.TabIndex = 57;
@@ -247,16 +246,16 @@
             // 
             this.labelSalaryOutput.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelSalaryOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelSalaryOutput.Location = new System.Drawing.Point(353, 272);
+            this.labelSalaryOutput.Location = new System.Drawing.Point(405, 267);
             this.labelSalaryOutput.Name = "labelSalaryOutput";
             this.labelSalaryOutput.Size = new System.Drawing.Size(134, 23);
             this.labelSalaryOutput.TabIndex = 56;
-            this.labelSalaryOutput.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelSalaryOutput.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelSalary
             // 
             this.labelSalary.AutoSize = true;
-            this.labelSalary.Location = new System.Drawing.Point(266, 277);
+            this.labelSalary.Location = new System.Drawing.Point(318, 272);
             this.labelSalary.Name = "labelSalary";
             this.labelSalary.Size = new System.Drawing.Size(77, 13);
             this.labelSalary.TabIndex = 55;
@@ -266,16 +265,16 @@
             // 
             this.labelNumberOfCandidatesOutput.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelNumberOfCandidatesOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelNumberOfCandidatesOutput.Location = new System.Drawing.Point(353, 238);
+            this.labelNumberOfCandidatesOutput.Location = new System.Drawing.Point(405, 233);
             this.labelNumberOfCandidatesOutput.Name = "labelNumberOfCandidatesOutput";
             this.labelNumberOfCandidatesOutput.Size = new System.Drawing.Size(134, 23);
             this.labelNumberOfCandidatesOutput.TabIndex = 54;
-            this.labelNumberOfCandidatesOutput.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelNumberOfCandidatesOutput.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelNumberOfCandidates
             // 
             this.labelNumberOfCandidates.AutoSize = true;
-            this.labelNumberOfCandidates.Location = new System.Drawing.Point(235, 244);
+            this.labelNumberOfCandidates.Location = new System.Drawing.Point(287, 239);
             this.labelNumberOfCandidates.Name = "labelNumberOfCandidates";
             this.labelNumberOfCandidates.Size = new System.Drawing.Size(112, 13);
             this.labelNumberOfCandidates.TabIndex = 53;
@@ -285,16 +284,16 @@
             // 
             this.labelNumberOfRoundsOutput.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelNumberOfRoundsOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelNumberOfRoundsOutput.Location = new System.Drawing.Point(353, 201);
+            this.labelNumberOfRoundsOutput.Location = new System.Drawing.Point(405, 196);
             this.labelNumberOfRoundsOutput.Name = "labelNumberOfRoundsOutput";
             this.labelNumberOfRoundsOutput.Size = new System.Drawing.Size(134, 23);
             this.labelNumberOfRoundsOutput.TabIndex = 50;
-            this.labelNumberOfRoundsOutput.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelNumberOfRoundsOutput.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelNumberOfRounds
             // 
             this.labelNumberOfRounds.AutoSize = true;
-            this.labelNumberOfRounds.Location = new System.Drawing.Point(247, 209);
+            this.labelNumberOfRounds.Location = new System.Drawing.Point(299, 204);
             this.labelNumberOfRounds.Name = "labelNumberOfRounds";
             this.labelNumberOfRounds.Size = new System.Drawing.Size(96, 13);
             this.labelNumberOfRounds.TabIndex = 49;
@@ -304,15 +303,16 @@
             // 
             this.labelRoleStatusOutput.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelRoleStatusOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelRoleStatusOutput.Location = new System.Drawing.Point(353, 165);
+            this.labelRoleStatusOutput.Location = new System.Drawing.Point(405, 160);
             this.labelRoleStatusOutput.Name = "labelRoleStatusOutput";
             this.labelRoleStatusOutput.Size = new System.Drawing.Size(134, 23);
             this.labelRoleStatusOutput.TabIndex = 48;
+            this.labelRoleStatusOutput.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelStatus
             // 
             this.labelStatus.AutoSize = true;
-            this.labelStatus.Location = new System.Drawing.Point(276, 175);
+            this.labelStatus.Location = new System.Drawing.Point(328, 170);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(62, 13);
             this.labelStatus.TabIndex = 47;
@@ -321,7 +321,7 @@
             // labelCompanyName
             // 
             this.labelCompanyName.AutoSize = true;
-            this.labelCompanyName.Location = new System.Drawing.Point(261, 341);
+            this.labelCompanyName.Location = new System.Drawing.Point(313, 336);
             this.labelCompanyName.Name = "labelCompanyName";
             this.labelCompanyName.Size = new System.Drawing.Size(82, 13);
             this.labelCompanyName.TabIndex = 72;
@@ -330,7 +330,7 @@
             // labelHiringDepartment
             // 
             this.labelHiringDepartment.AutoSize = true;
-            this.labelHiringDepartment.Location = new System.Drawing.Point(255, 378);
+            this.labelHiringDepartment.Location = new System.Drawing.Point(307, 373);
             this.labelHiringDepartment.Name = "labelHiringDepartment";
             this.labelHiringDepartment.Size = new System.Drawing.Size(92, 13);
             this.labelHiringDepartment.TabIndex = 73;
@@ -339,7 +339,7 @@
             // labelHiringManager
             // 
             this.labelHiringManager.AutoSize = true;
-            this.labelHiringManager.Location = new System.Drawing.Point(264, 414);
+            this.labelHiringManager.Location = new System.Drawing.Point(316, 409);
             this.labelHiringManager.Name = "labelHiringManager";
             this.labelHiringManager.Size = new System.Drawing.Size(79, 13);
             this.labelHiringManager.TabIndex = 74;
@@ -348,7 +348,7 @@
             // labelCompanySize
             // 
             this.labelCompanySize.AutoSize = true;
-            this.labelCompanySize.Location = new System.Drawing.Point(269, 450);
+            this.labelCompanySize.Location = new System.Drawing.Point(321, 445);
             this.labelCompanySize.Name = "labelCompanySize";
             this.labelCompanySize.Size = new System.Drawing.Size(74, 13);
             this.labelCompanySize.TabIndex = 75;
@@ -358,50 +358,54 @@
             // 
             this.labelCompanyNameOutput.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelCompanyNameOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelCompanyNameOutput.Location = new System.Drawing.Point(353, 331);
+            this.labelCompanyNameOutput.Location = new System.Drawing.Point(405, 326);
             this.labelCompanyNameOutput.Name = "labelCompanyNameOutput";
             this.labelCompanyNameOutput.Size = new System.Drawing.Size(134, 23);
             this.labelCompanyNameOutput.TabIndex = 76;
+            this.labelCompanyNameOutput.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelHiringDepartmentOutput
             // 
             this.labelHiringDepartmentOutput.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelHiringDepartmentOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelHiringDepartmentOutput.Location = new System.Drawing.Point(353, 368);
+            this.labelHiringDepartmentOutput.Location = new System.Drawing.Point(405, 363);
             this.labelHiringDepartmentOutput.Name = "labelHiringDepartmentOutput";
             this.labelHiringDepartmentOutput.Size = new System.Drawing.Size(134, 23);
             this.labelHiringDepartmentOutput.TabIndex = 77;
+            this.labelHiringDepartmentOutput.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelHiringManagerOutput
             // 
             this.labelHiringManagerOutput.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelHiringManagerOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelHiringManagerOutput.Location = new System.Drawing.Point(353, 404);
+            this.labelHiringManagerOutput.Location = new System.Drawing.Point(405, 399);
             this.labelHiringManagerOutput.Name = "labelHiringManagerOutput";
             this.labelHiringManagerOutput.Size = new System.Drawing.Size(134, 23);
             this.labelHiringManagerOutput.TabIndex = 78;
+            this.labelHiringManagerOutput.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelCompanySizeOutput
             // 
             this.labelCompanySizeOutput.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelCompanySizeOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelCompanySizeOutput.Location = new System.Drawing.Point(353, 440);
+            this.labelCompanySizeOutput.Location = new System.Drawing.Point(405, 435);
             this.labelCompanySizeOutput.Name = "labelCompanySizeOutput";
             this.labelCompanySizeOutput.Size = new System.Drawing.Size(134, 23);
             this.labelCompanySizeOutput.TabIndex = 79;
+            this.labelCompanySizeOutput.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dataGridViewApplicationDetails
             // 
             this.dataGridViewApplicationDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewApplicationDetails.Location = new System.Drawing.Point(634, 171);
+            this.dataGridViewApplicationDetails.Location = new System.Drawing.Point(571, 169);
             this.dataGridViewApplicationDetails.Name = "dataGridViewApplicationDetails";
-            this.dataGridViewApplicationDetails.Size = new System.Drawing.Size(806, 491);
+            this.dataGridViewApplicationDetails.Size = new System.Drawing.Size(641, 491);
             this.dataGridViewApplicationDetails.TabIndex = 80;
             // 
             // labelApplicationDetails
             // 
             this.labelApplicationDetails.AutoSize = true;
-            this.labelApplicationDetails.Location = new System.Drawing.Point(631, 155);
+            this.labelApplicationDetails.Location = new System.Drawing.Point(568, 153);
             this.labelApplicationDetails.Name = "labelApplicationDetails";
             this.labelApplicationDetails.Size = new System.Drawing.Size(94, 13);
             this.labelApplicationDetails.TabIndex = 81;
@@ -411,34 +415,17 @@
             // 
             this.labelRoleInformation.AutoSize = true;
             this.labelRoleInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRoleInformation.Location = new System.Drawing.Point(349, 50);
+            this.labelRoleInformation.Location = new System.Drawing.Point(372, 50);
             this.labelRoleInformation.Name = "labelRoleInformation";
             this.labelRoleInformation.Size = new System.Drawing.Size(162, 24);
             this.labelRoleInformation.TabIndex = 84;
             this.labelRoleInformation.Text = "Role Information";
             // 
-            // comboBoxApplicationStatus
-            // 
-            this.comboBoxApplicationStatus.FormattingEnabled = true;
-            this.comboBoxApplicationStatus.Location = new System.Drawing.Point(729, 122);
-            this.comboBoxApplicationStatus.Name = "comboBoxApplicationStatus";
-            this.comboBoxApplicationStatus.Size = new System.Drawing.Size(122, 21);
-            this.comboBoxApplicationStatus.TabIndex = 89;
-            // 
-            // labelApplicationStatus
-            // 
-            this.labelApplicationStatus.AutoSize = true;
-            this.labelApplicationStatus.Location = new System.Drawing.Point(631, 126);
-            this.labelApplicationStatus.Name = "labelApplicationStatus";
-            this.labelApplicationStatus.Size = new System.Drawing.Size(92, 13);
-            this.labelApplicationStatus.TabIndex = 88;
-            this.labelApplicationStatus.Text = "Application Status";
-            // 
             // labelHowToMainForm
             // 
             this.labelHowToMainForm.AutoSize = true;
             this.labelHowToMainForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHowToMainForm.Location = new System.Drawing.Point(1532, 76);
+            this.labelHowToMainForm.Location = new System.Drawing.Point(1251, 76);
             this.labelHowToMainForm.Name = "labelHowToMainForm";
             this.labelHowToMainForm.Size = new System.Drawing.Size(190, 20);
             this.labelHowToMainForm.TabIndex = 90;
@@ -447,7 +434,7 @@
             // labelMainFormStep1
             // 
             this.labelMainFormStep1.AutoSize = true;
-            this.labelMainFormStep1.Location = new System.Drawing.Point(1536, 117);
+            this.labelMainFormStep1.Location = new System.Drawing.Point(1255, 117);
             this.labelMainFormStep1.Name = "labelMainFormStep1";
             this.labelMainFormStep1.Size = new System.Drawing.Size(38, 13);
             this.labelMainFormStep1.TabIndex = 91;
@@ -456,7 +443,7 @@
             // labelMainFormStep2
             // 
             this.labelMainFormStep2.AutoSize = true;
-            this.labelMainFormStep2.Location = new System.Drawing.Point(1536, 202);
+            this.labelMainFormStep2.Location = new System.Drawing.Point(1255, 202);
             this.labelMainFormStep2.Name = "labelMainFormStep2";
             this.labelMainFormStep2.Size = new System.Drawing.Size(38, 13);
             this.labelMainFormStep2.TabIndex = 92;
@@ -464,7 +451,7 @@
             // 
             // labelStep1Details
             // 
-            this.labelStep1Details.Location = new System.Drawing.Point(1595, 117);
+            this.labelStep1Details.Location = new System.Drawing.Point(1314, 117);
             this.labelStep1Details.Name = "labelStep1Details";
             this.labelStep1Details.Size = new System.Drawing.Size(145, 71);
             this.labelStep1Details.TabIndex = 93;
@@ -472,7 +459,7 @@
             // 
             // labelStep2Details
             // 
-            this.labelStep2Details.Location = new System.Drawing.Point(1595, 201);
+            this.labelStep2Details.Location = new System.Drawing.Point(1314, 201);
             this.labelStep2Details.Name = "labelStep2Details";
             this.labelStep2Details.Size = new System.Drawing.Size(145, 71);
             this.labelStep2Details.TabIndex = 94;
@@ -480,7 +467,7 @@
             // 
             // labelSep3Details
             // 
-            this.labelSep3Details.Location = new System.Drawing.Point(1595, 294);
+            this.labelSep3Details.Location = new System.Drawing.Point(1314, 294);
             this.labelSep3Details.Name = "labelSep3Details";
             this.labelSep3Details.Size = new System.Drawing.Size(145, 43);
             this.labelSep3Details.TabIndex = 96;
@@ -489,7 +476,7 @@
             // labelMainFormStep3
             // 
             this.labelMainFormStep3.AutoSize = true;
-            this.labelMainFormStep3.Location = new System.Drawing.Point(1536, 295);
+            this.labelMainFormStep3.Location = new System.Drawing.Point(1255, 295);
             this.labelMainFormStep3.Name = "labelMainFormStep3";
             this.labelMainFormStep3.Size = new System.Drawing.Size(38, 13);
             this.labelMainFormStep3.TabIndex = 95;
@@ -497,7 +484,7 @@
             // 
             // labelStep4Details
             // 
-            this.labelStep4Details.Location = new System.Drawing.Point(1595, 356);
+            this.labelStep4Details.Location = new System.Drawing.Point(1314, 356);
             this.labelStep4Details.Name = "labelStep4Details";
             this.labelStep4Details.Size = new System.Drawing.Size(145, 71);
             this.labelStep4Details.TabIndex = 98;
@@ -506,7 +493,7 @@
             // labelStep4
             // 
             this.labelStep4.AutoSize = true;
-            this.labelStep4.Location = new System.Drawing.Point(1536, 357);
+            this.labelStep4.Location = new System.Drawing.Point(1255, 357);
             this.labelStep4.Name = "labelStep4";
             this.labelStep4.Size = new System.Drawing.Size(38, 13);
             this.labelStep4.TabIndex = 97;
@@ -516,7 +503,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1774, 673);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1474, 673);
             this.Controls.Add(this.labelStep4Details);
             this.Controls.Add(this.labelStep4);
             this.Controls.Add(this.labelSep3Details);
@@ -526,8 +514,6 @@
             this.Controls.Add(this.labelMainFormStep2);
             this.Controls.Add(this.labelMainFormStep1);
             this.Controls.Add(this.labelHowToMainForm);
-            this.Controls.Add(this.comboBoxApplicationStatus);
-            this.Controls.Add(this.labelApplicationStatus);
             this.Controls.Add(this.labelRoleInformation);
             this.Controls.Add(this.labelApplicationDetails);
             this.Controls.Add(this.dataGridViewApplicationDetails);
@@ -611,8 +597,6 @@
         private System.Windows.Forms.DataGridView dataGridViewApplicationDetails;
         private System.Windows.Forms.Label labelApplicationDetails;
         private System.Windows.Forms.Label labelRoleInformation;
-        private System.Windows.Forms.ComboBox comboBoxApplicationStatus;
-        private System.Windows.Forms.Label labelApplicationStatus;
         private System.Windows.Forms.Label labelHowToMainForm;
         private System.Windows.Forms.Label labelMainFormStep1;
         private System.Windows.Forms.Label labelMainFormStep2;

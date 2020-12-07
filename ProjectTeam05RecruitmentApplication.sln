@@ -11,10 +11,6 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RecruitmentDB", "Recruitmen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruitmentCodeFirstFromDB", "RecruitmentCodeFirstFromDB\RecruitmentCodeFirstFromDB.csproj", "{B1720F55-3B46-44C6-824A-31BF5B2C60BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruitmentTestConsoleApp", "RecruitmentTestConsoleApp\RecruitmentTestConsoleApp.csproj", "{46C9265E-6712-4D2B-8DAB-A673A085CB55}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruitmentAppValidation", "RecruitmentAppValidation\RecruitmentAppValidation.csproj", "{D8205ED7-22DE-4DB3-B5B3-F63CF690A242}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,14 +35,6 @@ Global
 		{B1720F55-3B46-44C6-824A-31BF5B2C60BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1720F55-3B46-44C6-824A-31BF5B2C60BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1720F55-3B46-44C6-824A-31BF5B2C60BA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{46C9265E-6712-4D2B-8DAB-A673A085CB55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46C9265E-6712-4D2B-8DAB-A673A085CB55}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46C9265E-6712-4D2B-8DAB-A673A085CB55}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46C9265E-6712-4D2B-8DAB-A673A085CB55}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D8205ED7-22DE-4DB3-B5B3-F63CF690A242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8205ED7-22DE-4DB3-B5B3-F63CF690A242}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8205ED7-22DE-4DB3-B5B3-F63CF690A242}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8205ED7-22DE-4DB3-B5B3-F63CF690A242}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

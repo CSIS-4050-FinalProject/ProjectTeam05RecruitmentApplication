@@ -25,13 +25,12 @@ namespace RecruitmentDashboardForm
             // Load main form
             this.Load += (s, e) => RecruiterMainForm_Load();
 
-            // Event handlers
+            /*Event handlers*/
 
             // Control Filter Change
             comboBoxCompaniesFilter.SelectedIndexChanged += (s, e) => FilterJobList();
             radioButtonActiveApplications.CheckedChanged += (s, e) => FilterJobList();
             radioButtonFinalizedApplications.CheckedChanged += (s, e) => FilterJobList();
-            comboBoxApplicationStatus.SelectedIndexChanged += (s, e) => FilterApplicationList();
 
             // Control listbox selection
             listBoxJobPositions.SelectedIndexChanged += (s, e) => UpdateDashboard();
@@ -39,11 +38,11 @@ namespace RecruitmentDashboardForm
             // Button CLick Listeners
             buttonUpdateApplication.Click += (s, e) => AddOrUpdateForm<Job>();
 
-            // Update recruitment process for selected role
-
             // Backup button event handler
             //buttonBackupDB.Click += (s,e) => BackupDataSetToXML(DataSet);
         }
+
+
         private void FilterApplicationList()
         {
             using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
@@ -153,7 +152,6 @@ namespace RecruitmentDashboardForm
 
                 foreach (var job in rolesByStatus)
                 {
-                    //listBoxJobPositions.Items.Add(job.Description);
                     /*Harmeet*/listBoxJobPositions.Items.Add(job.JobId + ": " + job.Description); // adding job id to the list to fetch the job id for 
                 }
 
@@ -168,9 +166,6 @@ namespace RecruitmentDashboardForm
         /// </summary>
         private void FilterJobList()
         {
-
-            //TODO: Filter jobs list considering radio and combobox selection
-
             listBoxJobPositions.Items.Clear();
             using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
             {
@@ -257,22 +252,12 @@ namespace RecruitmentDashboardForm
                                  where company.CompanyId == companyID
                                  select company;
 
-                //Company labels
-                //foreach (var c in getCompany) {
-                //    labelCompanyNameOutput.Text = c.Name;
-                //    labelHiringDepartmentOutput.Text = c.HiringDepartment;
-                //    labelHiringManagerOutput.Text = c.HiringManager;
-                //    labelCompanySizeOutput.Text = c.Size.ToString();
-                //}
-
                 var getCompanyDetails = context.Companies.Find(companyID);
                 labelCompanyNameOutput.Text = getCompanyDetails.Name;
                 labelHiringDepartmentOutput.Text = getCompanyDetails.HiringDepartment;
                 labelHiringManagerOutput.Text = getCompanyDetails.HiringManager;
                 labelCompanySizeOutput.Text = getCompanyDetails.Size.ToString();
 
-                //Initialize Application Status Combobox
-                FillApplicationStatusComboBox();
 
                 //Initialize datagridviews
                 InitializeDataGridView<RecruitmentCodeFirstFromDB.Application>(dataGridViewApplicationDetails, "Candidate", "Job", "Interviews");
@@ -287,43 +272,17 @@ namespace RecruitmentDashboardForm
                     }
                 }
 
-                //TODO: Get application number when selected application in the datagrid and instantiate the application
-
-
-                //TODO: Filter so that the only perks that show are the ones that matches the the role selected
-                //InitializeDataGridView<Job>(dataGridViewPerksOutput);
                 InitializeDataGridViewJobPerks(jobID);
             }
 
         }
 
         /// <summary>
-        /// Fills the application status with a list of unique status present in the database
+        /// Initializes datagridviews
         /// </summary>
-        private void FillApplicationStatusComboBox()
-        {
-            //Fills combobox with distinct status
-
-            using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
-            {
-                var items = context.Applications.Select(c => new
-                {
-                    status = c.Status
-                }).Distinct()
-                .AsEnumerable().Select(c => new
-                {
-                    displayMember = String.Format(c.status)
-                });
-
-                comboBoxApplicationStatus.DisplayMember = "displayMember";
-                comboBoxApplicationStatus.DataSource = items.ToList();
-
-                // Default is none selected
-                comboBoxApplicationStatus.SelectedIndex = -1;
-
-            }
-        }
-
+        /// <typeparam name="T"></typeparam>
+        /// <param name="gridView"></param>
+        /// <param name="columnsToHide"></param>
         private void InitializeDataGridView<T>(DataGridView gridView, params string[] columnsToHide) where T : class
         {
             //Sets grid controls
@@ -338,6 +297,10 @@ namespace RecruitmentDashboardForm
                 gridView.Columns[column].Visible = false;
         }
 
+        /// <summary>
+        /// Initialize Perks DatagridView
+        /// </summary>
+        /// <param name="jobId"></param>
         public void InitializeDataGridViewJobPerks(int jobId)
         {
             //Sets grid controls

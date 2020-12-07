@@ -23,19 +23,23 @@ namespace RecruitmentDashboardForm
             // Load main form
             this.Load += (s, e) => UpdateForm_Load();
 
-            //get role and application
+            // Get role and application
             this.role = role;
             this.applicationID = application;
             InitializeComponent();
 
+            // Event handlers
             this.buttonUpdateApplication.Click += (s, e) => UpdateApplication();
             this.buttonAddInterview.Click += (s, e) => AddInterview();
             this.buttonUpdateInterview.Click += (s, e) => UpdateInterview();
             this.dataGridViewInterviewDetails.Click += (s, e) => UpdateInterviewFields();
-
-
         }
 
+        /// <summary>
+        /// Updates Interview Fields
+        /// 
+        /// 
+        /// </summary>
         private void UpdateInterviewFields()
         {
             if (dataGridViewInterviewDetails.SelectedRows.Count > 0)
@@ -189,12 +193,28 @@ namespace RecruitmentDashboardForm
             InitializeUpdateForm();
         }
 
-
+        /// <summary>
+        /// Initializes Update Form 
+        /// 
+        /// Fills all datagrids
+        /// Checks the application status to see if application can be updated or not
+        /// Clears all textboxes
+        /// </summary>
         private void InitializeUpdateForm() {
+            
+            //gets role and applicationID from main form
             labelRole.Text = role;
-
             labelApplicationIDOutput.Text = applicationID.ToString();
 
+            // clears all textboxes
+            textBoxUpdateDateOutput.ResetText();
+            textBoxStatusOutput.ResetText();
+            textBoxRecruiterName.ResetText();
+            textBoxInterviewRound.ResetText();
+            textBoxMedium.ResetText();
+            textBoxScore.ResetText();
+
+            //Checks if the application status is active and allows for updates
             using (RecruitmentEntities context = Controller<RecruitmentEntities, DbSet>.SetContext())
             {
                 if (context.Applications.Find(applicationID).Status.Equals("discarded") ||
